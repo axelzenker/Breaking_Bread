@@ -30,6 +30,8 @@ puts 'Creating 100 fake users and meals...'
   meal.user = user
   meal.save
 end
+User.create(email: 'aaafolayan@gmail.com', password: '1234567')
+User.create(email: 'hai@gmail.com', password: '1234567')
 
 
 puts 'Finished!'
