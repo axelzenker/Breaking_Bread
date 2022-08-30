@@ -1,0 +1,16 @@
+<h1>update new meal</h1>
+<p><%= link_to 'back to meals', meals_path %></p>
+  <%= simple_form_for @meal do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :details %>
+    <%= f.input :cuisine %>
+    <%= f.input :diet %>
+    <%= f.input :portions %>
+    <%= f.input :allergens %>
+    <%= f.input :expiry %>
+    <%= f.input :reservation_min %>
+    <%= f.button :submit, class:"btn" %>
+  <% end %>
+
+<%= link_to "Back to meals", meals_path(@pet)%>
