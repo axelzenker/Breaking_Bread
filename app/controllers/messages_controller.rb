@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
         render_to_string(partial: "message", locals: {message: @message})
       )
       head :ok
+
     else
       render "chatrooms/show", status: :unprocessable_entity
     end
