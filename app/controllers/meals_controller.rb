@@ -13,7 +13,7 @@ class MealsController < ApplicationController
       {
         lat: meal.latitude,
         lng: meal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {flat: flat})
+        info_window: render_to_string(partial: "info_window", locals: {meal: meal})
       }
     end
   end
