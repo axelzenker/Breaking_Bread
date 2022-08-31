@@ -13,6 +13,13 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
+    @order = Order.new
+    # @order.user = current_user
+    if @order.save
+      redirect_to meal_path(@order.meal)
+    # else
+    #   render :new, status: :unprocessable_entity
+    end
   end
 
   def create
@@ -47,4 +54,8 @@ class MealsController < ApplicationController
     params.require(:meal).permit(:name, :diet, :category, :cuisine, :details, :portions,
                                  :allergens, :price, :expiry, :reservation_min)
   end
+
+  # def order_params
+  #   params.require(:order).permit()
+  # end
 end

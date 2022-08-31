@@ -10,4 +10,9 @@
 <p><%= @meal.reservation_min %></p>
 <p><%= @meal.expiry %></p>
 
+<% if @meal.orders %>
+  <p><%="there are currently #{@meal.orders.count} order for this meal"  %></p>
+<% end %>
+
 <%= link_to "Edit this meal", edit_meal_path(@meal)%>
+<%= link_to "order this meal", meal_orders_path(@meal), data: { 'turbo-method' => :post } %>
