@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_105349) do
     t.integer "reservation_min", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
