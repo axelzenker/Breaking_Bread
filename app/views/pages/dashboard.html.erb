@@ -1,0 +1,9 @@
+<p><%= @user.email %></p>
+<% @meals_offered.each do |meal| %>
+  <p><%= meal.name %></p>
+<% end %>
+<% @ordered_meals.each do |meal| %>
+  <p><%= meal.name %></p>
+<% end %>
+<p><%= link_to 'discover meal', meals_path %></p>
+<p><%= link_to 'post a meal', new_meal_path %></p>
