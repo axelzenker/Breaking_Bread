@@ -10,7 +10,7 @@ require 'faker'
 User.destroy_all
 Meal.destroy_all
 
-puts 'Creating 100 fake users and meals...'
+puts 'Creating 103 fake users and 101 meals...'
 100.times do
   user = User.create(
     email:    Faker::Internet.email,
@@ -24,14 +24,29 @@ puts 'Creating 100 fake users and meals...'
     portions: [1, 2, 3, 4].sample,
     diet: ['vegan', 'keto', 'no-restrictions', 'paleo', 'carnivore'].sample,
     allergens: ['none', 'peanut', 'none', 'gluten', 'shellfish', 'wheat', 'none', 'none', 'lactose'].sample,
-    expiry: Faker::Date.between(from: '2014-09-23', to: '2014-09-25')
+    expiry: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+    address: Faker::Address.city
   )
   meal.user = user
   meal.save
+
 end
 User.create(email: 'aaafolayan@gmail.com', password: '1234567')
-User.create(email: 'hai@gmail.com', password: '1234567')
+hai = User.create(email: 'hai@gmail.com', password: '1234567')
 User.create(email: 'axel@axel.com', password: '1234567')
 
+takumi = Meal.new(
+  name: "Tonkotsu Ramen",
+  category: "noodle soup",
+  cuisine: "Japanese",
+  details: "Homemade Ramen noodles in a delicious pork bone broth topped with Chashu and green onions from our garden",
+  portions: 10,
+  diet: "normal",
+  allergens: 'sesame',
+  expiry: "2022-09-05",
+  address: "Takumi Cologne"
+)
+takumi.user = hai
+takumi.save
 
 puts 'Finished!'
