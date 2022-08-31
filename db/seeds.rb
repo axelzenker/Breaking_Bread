@@ -10,7 +10,6 @@ require 'faker'
 User.destroy_all
 Meal.destroy_all
 
-
 puts 'Creating 100 fake users and meals...'
 100.times do
   user = User.create(
@@ -32,6 +31,7 @@ puts 'Creating 100 fake users and meals...'
 end
 User.create(email: 'aaafolayan@gmail.com', password: '1234567')
 User.create(email: 'hai@gmail.com', password: '1234567')
+User.create(email: 'axel@axel.com', password: '1234567')
 
 
 puts 'Finished!'
