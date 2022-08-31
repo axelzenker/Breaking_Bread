@@ -11,6 +11,10 @@
 <p><%= @meal.expiry %></p>
 <p><%= @meal.address  %></p>
 
+<% @meal.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <% if policy(@meal).edit? %>
 <%= link_to "Edit this meal", edit_meal_path(@meal)%> |
 <% end %>

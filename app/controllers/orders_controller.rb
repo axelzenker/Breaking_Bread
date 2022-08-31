@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    authorize @meal
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal

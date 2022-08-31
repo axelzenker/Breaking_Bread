@@ -8,6 +8,14 @@ class MealsController < ApplicationController
     else
       @meals = policy_scope(Meal)
     end
+
+    @markers = @meals.geocoded.map do |meal|
+      {
+        lat: meal.latitude,
+        lng: meal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {flat: flat})
+      }
+    end
   end
 
   def new
@@ -62,7 +70,7 @@ class MealsController < ApplicationController
 
   def meal_params
     params.require(:meal).permit(:name, :diet, :category, :cuisine, :details, :portions,
-                                 :allergens, :price, :expiry, :reservation_min)
+                                 :allergens, :price, :expiry, :reservation_min, photos: [])
   end
 
   # def order_params
