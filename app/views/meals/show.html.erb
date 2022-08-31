@@ -10,4 +10,8 @@
 <p><%= @meal.reservation_min %></p>
 <p><%= @meal.expiry %></p>
 
-<%= link_to "Edit this meal", edit_meal_path(@meal)%>
+<% if policy(@meal).edit? %>
+<%= link_to "Edit this meal", edit_meal_path(@meal)%> |
+<% end %>
+
+<%= button_to "Delete this meal", @meal, method: :delete if policy(@meal).destroy? %>
