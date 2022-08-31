@@ -15,3 +15,9 @@
 <% end %>
 
 <%= button_to "Delete this meal", @meal, method: :delete if policy(@meal).destroy? %>
+
+<% if @meal.orders %>
+  <p><%="there are currently #{@meal.orders.count} order for this meal"  %></p>
+<% end %>
+
+<%= link_to "order this meal", meal_orders_path(@meal), data: { 'turbo-method' => :post } %>
