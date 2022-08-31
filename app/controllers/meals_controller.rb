@@ -1,17 +1,22 @@
 class MealsController < ApplicationController
+  before_action :set_meal, only: %i[show edit update destroy]
+
   def index
+    # authorize @meals
     if params[:query].present?
-      @meals = Meal.search(params[:query])
+      @meals = policy_scope(Meal).search(params[:query])
     else
-      @meals = Meal.all
+      @meals = policy_scope(Meal)
     end
   end
 
   def new
     @meal = Meal.new
+    authorize @meal
   end
 
   def show
+    authorize @meal
     @meal = Meal.find(params[:id])
     @order = Order.new
     # @order.user = current_user
@@ -25,6 +30,7 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     @meal.user = current_user
+    authorize @meal
     if @meal.save
       redirect_to meal_path(@meal)
     else
@@ -33,22 +39,26 @@ class MealsController < ApplicationController
   end
 
   def edit
-    @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
   def update
-    @meal = Meal.find(params[:id])
+    authorize @meal
     @meal.update(meal_params)
     redirect_to meal_path(@meal)
   end
 
   def destroy
-    @meal = Meal.find(params[:id])
+    authorize @meal
     @meal.destroy
     redirect_to meals_path, status: :see_other
   end
 
   private
+
+  def set_meal
+    @meal = Meal.find(params[:id])
+  end
 
   def meal_params
     params.require(:meal).permit(:name, :diet, :category, :cuisine, :details, :portions,
