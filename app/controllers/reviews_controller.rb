@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.order_id = @order_id
 
-
     if @review.save
       redirect_to user_path(@review)
     else
