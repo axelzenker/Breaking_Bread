@@ -12,6 +12,5 @@ class OrderPolicy < ApplicationPolicy
 
   def create?
     user != record.meal.user
-
   end
 end
