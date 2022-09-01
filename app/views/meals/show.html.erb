@@ -26,9 +26,6 @@
 <% end %>
 
 
-
-
-
 <% @meal.orders.each do |order| %>
   <% if order.user == current_user %>
     <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path %>
@@ -36,7 +33,7 @@
 <% end %>
 
 <% if policy(@order).create? %>
-<%= link_to "order this meal", meal_orders_path(@meal),
+  <%= link_to "order this meal", meal_orders_path(@meal),
       data: {
         'turbo-method' => :post,
         controller: "modals",
@@ -44,5 +41,3 @@
         action: "click->modals#fireSweetAlert"
       } %>
 <% end %>
-<%= link_to 'dashboard', dashboard_path %>
-
