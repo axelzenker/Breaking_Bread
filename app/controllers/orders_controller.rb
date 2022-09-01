@@ -18,7 +18,8 @@ class OrdersController < ApplicationController
     @order.meal = @meal
     authorize @order
     if @order.save
-      redirect_to meal_path(@order.meal)
+      # redirect_to meal_path(@order.meal)
+      head :ok
     else
       render :new, status: :unprocessable_entity
     end
