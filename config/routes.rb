@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get :chatroom, on: :member
   end
 
-  resources :chatrooms, only: :show do
+  resources :orders, only: [] do
     resources :messages, only: :create
   end
 

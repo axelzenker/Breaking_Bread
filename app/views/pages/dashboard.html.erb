@@ -7,10 +7,10 @@
 <% end %>
 <br>
 <p>the meals you have ordered:</p>
-<% @ordered_meals.each do |meal| %>
-  <p><%= meal.name%></p>
-  <p><%= meal.user.email%></p>
-  <%= link_to  %>
+<% @orders.each do |order| %>
+  <p><%= order.meal.name%></p>
+  <p><%= order.meal.user.email%></p>
+  <%= link_to 'Start a Chat', chatroom_order_path(order) %>
 <% end %>
 <br>
 <p><%= link_to 'discover meal', meals_path %></p>
