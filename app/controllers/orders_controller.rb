@@ -10,7 +10,8 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.meal = @meal
     if @order.save
-      redirect_to meal_path(@order.meal)
+      # redirect_to meal_path(@order.meal)
+      head :ok
     else
       render :new, status: :unprocessable_entity
     end
