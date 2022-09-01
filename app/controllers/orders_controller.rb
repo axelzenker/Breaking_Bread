@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 
   def chatroom
     @order = Order.find(params[:id])
+    @message = Message.new
     authorize @order
     @customer = @order.user
     @chef = @order.meal.user
