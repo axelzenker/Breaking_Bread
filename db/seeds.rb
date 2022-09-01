@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-User.destroy_all
 Meal.destroy_all
+User.destroy_all
 
 puts 'Creating 103 fake users and 101 meals...'
 100.times do
