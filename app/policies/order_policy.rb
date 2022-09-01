@@ -5,4 +5,17 @@ class OrderPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def chatroom?
+    user == record.user || user == record.meal.user
+  end
+
+  def create?
+    # user != record.user
+    if user == record.user
+      false
+    else
+      true
+    end
+  end
 end
