@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
   resources :orders, only: [] do
     resources :reviews, only: %i[show create]
+    get :chatroom, on: :member
   end
 
-  resources :chatrooms, only: :show do
+  resources :orders, only: [] do
     resources :messages, only: :create
   end
 

@@ -1,3 +1,0 @@
-def show?
-  true
-end

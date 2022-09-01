@@ -27,12 +27,8 @@ class MealsController < ApplicationController
     authorize @meal
     @meal = Meal.find(params[:id])
     @order = Order.new
-    # @order.user = current_user
-    if @order.save
-      redirect_to meal_path(@order.meal)
-    # else
-    #   render :new, status: :unprocessable_entity
-    end
+    @order.user = current_user
+    @order.meal = @meal
   end
 
   def create
