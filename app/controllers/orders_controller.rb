@@ -12,10 +12,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    authorize @meal
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal
+    authorize @order
     if @order.save
       redirect_to meal_path(@order.meal)
     else

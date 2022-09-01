@@ -11,11 +11,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def create?
-    # user != record.user
-    if user == record.user
-      false
-    else
-      true
-    end
+    user != record.meal.user
+
   end
 end
