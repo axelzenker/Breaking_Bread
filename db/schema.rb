@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_124546) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_152200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,17 +65,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_124546) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-
     t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.bigint "chatroom_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_messages_on_order_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -117,7 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_124546) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "meals", "users"
-  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "orders"
   add_foreign_key "messages", "users"
   add_foreign_key "orders", "meals"
   add_foreign_key "orders", "users"

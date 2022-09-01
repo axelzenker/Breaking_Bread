@@ -6,7 +6,7 @@ class ChatroomsController < ApplicationController
     @message = Message.new
   end
 
-  def new
+  def create
     @chatroom = Chatroom.new
     authorize @chatroom
   end

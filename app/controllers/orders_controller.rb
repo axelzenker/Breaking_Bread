@@ -4,6 +4,13 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def chatroom
+    @order = Order.find(params[:id])
+    authorize @order
+    @customer = @order.user
+    @chef = @order.meal.user
+  end
+
   def create
     authorize @meal
     @order = Order.new
