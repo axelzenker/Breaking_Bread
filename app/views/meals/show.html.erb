@@ -25,13 +25,8 @@
   <p><%="there are currently #{@meal.orders.count} order for this meal"  %></p>
 <% end %>
 
-<%= link_to "order this meal", meal_orders_path(@meal),
-      data: {
-        'turbo-method' => :post,
-        controller: "modals",
-        modals_dashboard_url_value: dashboard_path,
-        action: "click->modals#fireSweetAlert"
-      } %>
+
+
 
 
 <% @meal.orders.each do |order| %>
@@ -39,3 +34,15 @@
     <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path %>
   <% end %>
 <% end %>
+
+<% if policy(@order).create? %>
+<%= link_to "order this meal", meal_orders_path(@meal),
+      data: {
+        'turbo-method' => :post,
+        controller: "modals",
+        modals_dashboard_url_value: dashboard_path,
+        action: "click->modals#fireSweetAlert"
+      } %>
+<% end %>
+<%= link_to 'dashboard', dashboard_path %>
+

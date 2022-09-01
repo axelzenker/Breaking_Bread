@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-User.destroy_all
 Meal.destroy_all
+User.destroy_all
 
 puts 'Creating 103 fake users and 101 meals...'
 100.times do
@@ -31,9 +31,9 @@ puts 'Creating 103 fake users and 101 meals...'
   meal.save
 
 end
-User.create(email: 'aaafolayan@gmail.com', password: '1234567')
-hai = User.create(email: 'hai@gmail.com', password: '1234567')
-User.create(email: 'axel@axel.com', password: '1234567')
+User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi')
+hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai')
+User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel')
 
 takumi = Meal.new(
   name: "Tonkotsu Ramen",

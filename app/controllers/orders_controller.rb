@@ -4,11 +4,19 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def chatroom
+    @order = Order.find(params[:id])
+    @message = Message.new
+    authorize @order
+    @customer = @order.user
+    @chef = @order.meal.user
+  end
+
   def create
-    authorize @meal
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal
+    authorize @order
     if @order.save
       # redirect_to meal_path(@order.meal)
       head :ok
