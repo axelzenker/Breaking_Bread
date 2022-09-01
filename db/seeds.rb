@@ -11,7 +11,7 @@ Meal.destroy_all
 User.destroy_all
 
 puts 'Creating 103 fake users and 101 meals...'
-100.times do
+20.times do
   user = User.create(
     email:    Faker::Internet.email,
     password: Faker::Internet.password
