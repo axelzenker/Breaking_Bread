@@ -6,6 +6,8 @@
 .row1 {
   display: flex;
   height: 100vh;
+  color:black !important;
+  text-decoration:none;
 }
 
 .row2 {
@@ -18,5 +20,8 @@
   display: flex;
   height:100vh;
   background-color: #F5D4C1;
+}
 
+.nav-link {
+  color: black;
 }
