@@ -3,22 +3,23 @@
     <div class="item1">
       <div class="photos ">
         <% @meal.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"photo" %>
         <% end %>
       </div>
 
       <div class="details">
         <h1><%= @meal.name %></h1>
-        <%= @meal.category %>
-        <p><%= @meal.cuisine %></p>
-        <p><%= @meal.details %></p>
-        <p><%= @meal.portions %></p>
-        <p><%= @meal.diet %></p>
-        <p><%= @meal.allergens %></p>
-        <p><%= @meal.price %></p>
-        <p><%= @meal.reservation_min %></p>
-        <p><%= @meal.expiry %></p>
-        <p><%= @meal.address  %></p>
+        <p><%= "catergory: #{@meal.category}" %></p>
+        <p><%="cuisine:#{@meal.cuisine}"  %></p>
+        <p><%= 'deatails:'  %></p>
+        <p><%= " #{@meal.details}" %></p>
+        <p><%= "portion: #{@meal.portions}" %></p>
+        <p><%= "diet-restrictions: #{@meal.diet}" %></p>
+        <p><%="allergens: #{@meal.allergens }" %></p>
+        <p><%= "price: #{@meal.price}" %></p>
+        <p><%= "reservation min: #{@meal.reservation_min}" %></p>
+        <p><%= "expiry: #{@meal.expiry}" %></p>
+        <p><%= "Address: #{@meal.address}"  %></p>
       </div>
     </div>
 
