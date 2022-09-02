@@ -1,64 +1,59 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <% @meal.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="flexbox">
+    <div class="item1">
+      <div class="photos ">
+        <% @meal.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+
+      <div class="details">
+        <h1><%= @meal.name %></h1>
+        <%= @meal.category %>
+        <p><%= @meal.cuisine %></p>
+        <p><%= @meal.details %></p>
+        <p><%= @meal.portions %></p>
+        <p><%= @meal.diet %></p>
+        <p><%= @meal.allergens %></p>
+        <p><%= @meal.price %></p>
+        <p><%= @meal.reservation_min %></p>
+        <p><%= @meal.expiry %></p>
+        <p><%= @meal.address  %></p>
+      </div>
+    </div>
+
+    <div class="item2">
+      <div class="map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+      <div class="order">
+        <% if @meal.orders %>
+          <p><%="#{@meal.orders.count} left"  %></p>
+        <% end %>
+        <% if policy(@order).create? %>
+          <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
+              data: {
+                'turbo-method' => :post,
+                controller: "modals",
+                modals_dashboard_url_value: dashboard_path,
+                action: "click->modals#fireSweetAlert"
+              } %>
+        <% end %>
+      </div>
+      <% if policy(@meal).edit? %>
+        <%= button_to "Edit this meal", edit_meal_path(@meal), class: "btn btn-success"%>
       <% end %>
 
-    </div>
-    <div class="col"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h1><%= @meal.name %></h1>
-      <p><%= @meal.category %></p>
-      <p><%= @meal.cuisine %></p>
-      <p><%= @meal.details %></p>
-      <p><%= @meal.portions %></p>
-      <p><%= @meal.diet %></p>
-      <p><%= @meal.allergens %></p>
-      <p><%= @meal.price %></p>
-      <p><%= @meal.reservation_min %></p>
-      <p><%= @meal.expiry %></p>
-      <p><%= @meal.address  %></p>
-    </div>
-    <div class="col">
-      <% if @meal.orders %>
-        <p><%="there are currently #{@meal.orders.count} order for this meal"  %></p>
-      <% end %>
-      <% if policy(@order).create? %>
-        <%= link_to "order this meal", meal_orders_path(@meal),
-            data: {
-              'turbo-method' => :post,
-              controller: "modals",
-              modals_dashboard_url_value: dashboard_path,
-              action: "click->modals#fireSweetAlert"
-            } %>
-      <% end %>
-    </div>
-  </div>
+      <%= button_to "Delete this meal", @meal, class: "btn btn-success", method: :delete if policy(@meal).destroy? %>
 
+      <% @meal.orders.each do |order| %>
+        <% if order.user == current_user %>
+          <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path, class: "btn btn-success" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-<% if policy(@meal).edit? %>
-<%= link_to "Edit this meal", edit_meal_path(@meal)%> |
-<% end %>
-
-<%= button_to "Delete this meal", @meal, method: :delete if policy(@meal).destroy? %>
-
-
-
-
-<% @meal.orders.each do |order| %>
-  <% if order.user == current_user %>
-    <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path %>
-  <% end %>
-<% end %>
