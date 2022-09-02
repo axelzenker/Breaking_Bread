@@ -1,21 +1,23 @@
-<h1 class="text-align center">All meals</h1>
-<p><%= link_to 'post a meal', new_meal_path %></p>
+<div class = "backgroundcolour">
+  <h1 class="text-align center">All meals</h1>
+  <p><%= link_to 'post a meal', new_meal_path %></p>
 
 
-<div class="d-flex">
-<br>
-  <div class="cards">
-    <% @meals.each do |meal| %>
-      <% url = meal.photos.attached? ? meal.photos.first.url : 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b-4.jpg?fit=700,1024' %>
+  <div class="d-flex">
+  <br>
+    <div class="cards">
+      <% @meals.each do |meal| %>
+        <% url = meal.photos.attached? ? meal.photos.first.url : 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b-4.jpg?fit=700,1024' %>
 
-      <div class="card" style="background-image: url(<%= url %>)"><%= link_to meal.name, meal_path(meal) %>
-      </div>
-    <% end %>
-  </div>
+        <div class="card" style="background-image: url(<%= url %>)"><%= link_to meal.name, meal_path(meal) %>
+        </div>
+      <% end %>
+    </div>
 
-  <div id="map"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
