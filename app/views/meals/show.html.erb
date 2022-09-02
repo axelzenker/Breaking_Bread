@@ -9,6 +9,7 @@
 
       <div class="details">
         <h1><%= @meal.name %></h1>
+        <p><%= "made by #{@meal.user.nickname}" %></p>
         <p><%= "catergory: #{@meal.category}" %></p>
         <p><%="cuisine:#{@meal.cuisine}"  %></p>
         <p><%= 'deatails:'  %></p>
