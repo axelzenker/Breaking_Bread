@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.h1 {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+}
