@@ -10,5 +10,6 @@
     <%= f.input :allergens %>
     <%= f.input :expiry %>
     <%= f.input :reservation_min %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class:"btn" %>
   <% end %>
