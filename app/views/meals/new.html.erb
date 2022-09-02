@@ -2,6 +2,7 @@
 <p><%= link_to 'back to meals', meals_path %></p>
   <%= simple_form_for @meal do |f| %>
     <%= f.input :name %>
+    <%= f.input :address %>
     <%= f.input :category %>
     <%= f.input :details %>
     <%= f.input :cuisine %>
