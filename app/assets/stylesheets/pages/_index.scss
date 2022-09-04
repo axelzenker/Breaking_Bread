@@ -4,6 +4,56 @@
 
 
 .backgroundcolour {
+
   background-color: #F5D4C1;
   padding: 10px;
+}
+
+.contain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: beige;
+  height: 100vh;
+  .banner{
+    display: flex;
+    background-image: linear-gradient(#DDE5EB, #FFAC4B, white);
+    flex: 2;
+
+    #map{
+      height: auto;
+      width: 33%;
+      border-radius: 15px;
+      margin: 15px;
+      margin-left: auto;
+    }
+  }
+  .car1{
+    padding-left: 30px;
+    background: white;
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .passangers1{
+      display: inline-block;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  .car2{
+    padding-left: 30px;
+    background: white;
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .passangers2{
+      display: inline-block;
+      height: 100%;
+      margin-bottom: 10px;
+
+    }
+  }
 }
