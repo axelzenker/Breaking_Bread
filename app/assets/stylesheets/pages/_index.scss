@@ -35,10 +35,15 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    .sticky {
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
 
     .passangers1{
       display: inline-block;
-      height: 70%;
+      height: 75%;
       margin-bottom: 10px;
       border-radius: 15px;
     }
@@ -53,7 +58,7 @@
 
     .passangers2{
       display: inline-block;
-      height: 100%;
+      height: 75%;
       margin-bottom: 10px;
 
     }
