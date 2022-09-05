@@ -12,7 +12,8 @@ export default class extends Controller {
   }
 
   fireSweetAlert() {
-    swal("Are you sure you want to do this?", {
+    const meal = document.querySelector('h1').innerText;
+    swal(`You just ordered 1x ${meal}`, {
       buttons: "go to dashboard",
     }).then((value) => {
       if (value) {

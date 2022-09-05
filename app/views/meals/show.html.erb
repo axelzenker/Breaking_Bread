@@ -33,7 +33,7 @@
 
       <div class="order">
         <% if @meal.orders %>
-          <p><%="#{@meal.orders.count} left"  %></p>
+          <p><%="#{@meal.orders.count} #{@meal.name} portions have been ordered so far"  %></p>
         <% end %>
         <% if policy(@order).create? %>
           <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
