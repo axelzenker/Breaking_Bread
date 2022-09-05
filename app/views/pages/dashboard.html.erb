@@ -1,24 +1,26 @@
-<p>your email address:</p>
-<p><%= @user.email %></p>
-<br>
-<p>the meals you are offering:</p>
-<% @meals_offered.each do |meal| %>
-  <p><%= meal.name %></p>
-  <%= pluralize meal.orders.size, "orders"  %> have been placed:
-  <ul>
-    <% meal.orders.each do |order| %>
-    <li><%= order.user.nickname %> placed an order <%= link_to 'Start a Chat', chatroom_order_path(order) %></li>
-    <% end %>
-  </ul>
-<% end %>
-<br>
+<div class="container">
+  <p>your email address:</p>
+  <p><%= @user.email %></p>
+  <br>
+  <p>the meals you are offering:</p>
+  <% @meals_offered.each do |meal| %>
+    <p><%= meal.name %></p>
+    <%= pluralize meal.orders.size, "orders"  %> have been placed:
+    <ul>
+      <% meal.orders.each do |order| %>
+      <li><%= order.user.nickname %> placed an order <%= link_to 'Start a Chat', chatroom_order_path(order) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <br>
 
-<p>the meals you have ordered:</p>
-<% @orders.each do |order| %>
-  <p><%= order.meal.name%></p>
-  <p><%= order.meal.user.email%></p>
-  <%= link_to 'Start a Chat', chatroom_order_path(order) %>
-<% end %>
-<br>
-<p><%= link_to 'discover meal', meals_path %></p>
-<p><%= link_to 'post a meal', new_meal_path %></p>
+  <p>the meals you have ordered:</p>
+  <% @orders.each do |order| %>
+    <p><%= order.meal.name%></p>
+    <p><%= order.meal.user.email%></p>
+    <%= link_to 'Start a Chat', chatroom_order_path(order) %>
+  <% end %>
+  <br>
+  <p><%= link_to 'discover meal', meals_path %></p>
+  <p><%= link_to 'post a meal', new_meal_path %></p>
+</div>
