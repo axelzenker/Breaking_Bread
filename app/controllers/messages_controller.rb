@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
     if @message.save
       OrderChannel.broadcast_to(
         @order,
-        render_to_string(partial: "message", locals: {message: @message})
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id
       )
       head :ok
 
