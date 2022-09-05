@@ -1,0 +1,17 @@
+.dashboard {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#DDE5EB, #FFAC4B, white);
+  padding: 10px;
+}
+
+.btn-dashboard {
+  background-color: white;
+  border: 1px solid #4A4A4A;
+  padding: 8px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  width: 300px;
+  text-align: center;
+}
