@@ -10,8 +10,9 @@ export default class extends Controller {
   static values = {
     dashboardUrl: String
   }
-const meal = document.querySelector('h1').innerHtml;
+
   fireSweetAlert() {
+    const meal = document.querySelector('h1').innerText;
     swal(`You just ordered 1x ${meal}`, {
       buttons: "go to dashboard",
     }).then((value) => {
