@@ -28,25 +28,25 @@ eri = User.create(email: 'eri@gmail.com', password: '1234567', nickname: 'Eri')
 natalia = User.create(email: 'natalia@gmail.com', password: '1234567', nickname: 'Natalia')
 diego = User.create(email: 'diego@gmail.com', password: '1234567', nickname: 'Diego')
 
-
 puts 'Creating 19 delicious real meals...'
 
 puts 'creating Tonkotsu Ramen...'
-tonkotsu-ramen = Meal.new(
+tonkotsuramen = Meal.new(
   name: "Tonkotsu Ramen",
   category: "Noodle Soup",
   cuisine: "Japanese",
-  details: "I was inspired to make this recipe after I couldn't stop thinking of a similar dish served in my elementary school cafeteria more than 50 years ago! I would love to share one of my favorite meals.",
+  details: "I was inspired to make this recipe after I couldn't stop thinking of a similar dish served in my elementary
+  school cafeteria more than 50 years ago! I would love to share one of my favorite meals.",
   portions: 1,
   diet: "normal",
-  allergens: 'Sesame','Wheat','Eggs','Fish',
+  allergens: 'Sesame, Wheat, Eggs, Fish',
   expiry: "2022-09-12",
   address: "Spichernstraße 8, 50672 Cologne"
 )
 file1 = URI.open("https://takumi.koeln/wp-content/uploads/2021/10/ramen-koeln-2-shio.jpg")
-takumi.photos.attach(io: file1, filename: 'ramen', content_type: 'image/jpg')
-takumi.user = hai
-takumi.save
+tonkotsuramen.photos.attach(io: file1, filename: 'ramen', content_type: 'image/jpg')
+tonkotsuramen.user = hai
+tonkotsuramen.save
 
 puts 'creating beefshrooms...'
 beefshrooms = Meal.new(
@@ -56,7 +56,7 @@ beefshrooms = Meal.new(
   details: "A lovely meal which I cooked to last night. I would be happy to share with somebody!",
   portions: 2,
   diet: "Carnivore",
-  allergens: 'mushrooms','wheat'
+  allergens: 'mushrooms, wheat',
   expiry: "2022-09-14",
   address: "Meister-Ekkehart-Straße 9, 50937 Cologne"
 )
@@ -70,7 +70,9 @@ salchow = Meal.new(
   name: "Simple Salmon Chowder",
   category: "Soup",
   cuisine: "American",
-  details: "I've lived on a farm in the Yakima Valley all my life. I have a big garden, and by the end of fall, my cellar shelves are full of canned fruits and vegetables. This salmon chowder recipe uses some of the root vegetables I grow—along with the delicious salmon that is so plentiful here.",
+  details: "I've lived on a farm in the Yakima Valley all my life. I have a big garden, and by the end of fall, my
+  cellar shelves are full of canned fruits and vegetables. This salmon chowder recipe uses some of the root vegetables
+  I grow—along with the delicious salmon that is so plentiful here.",
   portions: 8,
   diet: "Pescetarian",
   allergens: 'fish',
@@ -87,7 +89,8 @@ creojam = Meal.new(
   name: "Creole Jambalaya",
   category: "Soup",
   cuisine: "American",
-  details: "Jambalaya is a traditional dish, coming from our Spanish and French culture. Rice is the main ingredient, with different meats or seafood mixed in. I particularly like this variation with shrimp and ham.",
+  details: "Jambalaya is a traditional dish, coming from our Spanish and French culture. Rice is the main ingredient,
+  with different meats or seafood mixed in. I particularly like this variation with shrimp and ham.",
   portions: 5,
   diet: "Carnivore",
   allergens: 'fish',
@@ -134,75 +137,77 @@ jollof.user = afolabi
 jollof.save
 
 puts 'creating beef-paprikash...'
-beef-paprikash = Meal.new(
+beefpaprikash = Meal.new(
   name: "Beef Paprikash with Fire-Roasted Tomatoes",
   category: "Stew",
   cuisine: "Hungarian",
   details: "Beef paprikash, a Hungarian dish, makes a marvelous dinner. I have plenty of portions for pick-up ready.",
   portions: 6,
   diet: "Carnivore",
-  allergens: 'wheat','butter', 'meat'
+  allergens: 'wheat butter meat',
   expiry: "2022-09-12",
   address: "Biberstraße 32, 50678 Cologne"
 )
 file7 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps187883_TH153343C04_14_2b-1.jpg?fit=700,1024")
-beef-paprikash.photos.attach(io: file7, filename: 'beef-paprikash', content_type: 'image/jpg')
-beef-paprikash.user = jeff
-beef-paprikash.save
+beefpaprikash.photos.attach(io: file7, filename: 'beefpaprikash', content_type: 'image/jpg')
+beefpaprikash.user = jeff
+beefpaprikash.save
 
 puts 'creating chicken-rice-skillet...'
-chicken-rice-skillet = Meal.new(
+chickenriceskillet = Meal.new(
   name: "Chicken Rice Skillet",
   category: "One Pot Dish",
   cuisine: "American",
-  details: "Pleasant seasonings and plenty of vegetables highlight this traditional chicken and rice pairing. Can be easily reheated in the oven or microwave.",
+  details: "Pleasant seasonings and plenty of vegetables highlight this traditional chicken and rice pairing. Can be
+  easily reheated in the oven or microwave.",
   portions: 6,
   diet: "Carnivore",
-  allergens: 'wheat','butter', 'meat'
+  allergens: 'wheat butter meat',
   expiry: "2022-09-12",
   address: "Landsbergstraße 26, 50678 Cologne"
 )
 file8 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Rice-Skillet_EXPS_MIOPBZ17_15416_C10_13_5b-4.jpg?fit=700,1024")
-chicken-rice-skillet.photos.attach(io: file8, filename: 'chicken-rice-skillet', content_type: 'image/jpg')
-chicken-rice-skillet.user = jeff
-chicken-rice-skillet.save
+chickenriceskillet.photos.attach(io: file8, filename: 'chickenriceskillet', content_type: 'image/jpg')
+chickenriceskillet.user = jeff
+chickenriceskillet.save
 
 puts 'creating bean&beef chili...'
-bean-beef-chili = Meal.new(
+beanbeefchili = Meal.new(
   name: "Bean & Beef Slow-Cooked Chili",
   category: "One Pot Dish",
   cuisine: "American",
-  details: "This chili may be already chock-full, but we have it up even more topped up with toppings like pico de gallo, red onion, cilantro and cheese.",
+  details: "This chili may be already chock-full, but we have it up even more topped up with toppings like pico de
+  gallo, red onion, cilantro and cheese.",
   portions: 3,
   diet: "Carnivore",
-  allergens: 'wheat','butter', 'meat', 'onion'
+  allergens: 'wheat butter meat onion',
   expiry: "2022-09-14",
   address: "Löwengasse 9, 50676 Cologne"
 )
 file9 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps79528_SD153319B10_07_5b-2.jpg?fit=700,1024")
-bean-beef-chili.photos.attach(io: file9, filename: 'bean-beef-chili', content_type: 'image/jpg')
-bean-beef-chili.user = damon
-bean-beef-chili.save
+beanbeefchili.photos.attach(io: file9, filename: 'beanbeefchili', content_type: 'image/jpg')
+beanbeefchili.user = damon
+beanbeefchili.save
 
 puts 'creating hay and straw...'
-hay-straw = Meal.new(
+haystraw = Meal.new(
   name: "Hay and Straw",
   category: "Pasta",
   cuisine: "Italian",
   details: "This colorful pasta dish combines julienned ham, Parmesan cheese, peas and linguine",
   portions: 4,
   diet: "Carnivore",
-  allergens: 'wheat','butter', 'meat', 'onion'
+  allergens: 'wheat butter meat onion',
   expiry: "2022-09-14",
   address: "Krummer Büchel 2, 50676 Cologne"
 )
 file10 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps21282_FF163882B01_13_6b.jpg?fit=700,1024")
-hay-straw.photos.attach(io: file10, filename: 'hay-straw', content_type: 'image/jpg')
-hay-straw.user = sabrina
-hay-straw.save
+haystraw.photos.attach(io: file10, filename: 'haystraw', content_type: 'image/jpg')
+haystraw.user = sabrina
+haystraw.save
 
 puts 'creating green bean soup...'
-bean-soup = Meal.new(
+beansoup = Meal.new(
   name: "Bean Soup",
   category: "Soup",
   cuisine: "German",
@@ -213,98 +218,104 @@ bean-soup = Meal.new(
   expiry: "2022-09-10",
   address: "Wöhlerstraße 35, 50823 Cologne"
 )
-file10 = URI.open("https://img.chefkoch-cdn.de/rezepte/999441205246890/bilder/1351902/crop-960x640/leckere-gruene-bohnensuppe.jpg")
-bean-soup.photos.attach(io: file11, filename: 'bean-soup', content_type: 'image/jpg')
-bean-soup.user = justus
-bean-soup.save
+file11 = URI.open("https://img.chefkoch-cdn.de/rezepte/999441205246890/bilder/1351902/crop-960x640/leckere-gruene-bohnensuppe.jpg")
+beansoup.photos.attach(io: file11, filename: 'beansoup', content_type: 'image/jpg')
+beansoup.user = justus
+beansoup.save
 
 puts 'creating hong kong french toast...'
-french-toast = Meal.new(
+frenchtoast = Meal.new(
   name: "Hong Kong French Toast",
   category: "Breakfast",
   cuisine: "Hong Kong",
-  details: "Stuffed with peanut butter, soaked in custard, fried to golden crispy perfection, and drizzled with sweetened condensed milk, it takes this classic breakfast treat to a whole new level.",
+  details: "Stuffed with peanut butter, soaked in custard, fried to golden crispy perfection, and drizzled with
+  sweetened condensed milk, it takes this classic breakfast treat to a whole new level.",
   portions: 4,
   diet: "Vegetarian",
-  allergens: 'egg', 'wheat'
+  allergens: 'egg wheat',
   expiry: "2022-09-10",
   address: "Siebachstraße 105, 50733 Cologne"
 )
-file11 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-220823-hong-kong-french-toast-388-horizontal-rv-web-1662038739.jpg?crop=0.895xw:0.855xh;0.0646xw,0.128xh&resize=980:*")
-french-toast.photos.attach(io: file11, filename: 'french-toast', content_type: 'image/jpg')
-french-toast.user = johnson
-french-toast.save
+file12 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-220823-hong-kong-french-toast-388-horizontal-rv-web-1662038739.jpg?crop=0.895xw:0.855xh;0.0646xw,0.128xh&resize=980:*")
+frenchtoast.photos.attach(io: file12, filename: 'frenchtoast', content_type: 'image/jpg')
+frenchtoast.user = johnson
+frenchtoast.save
 
 puts 'creating cheesy brussels sprout...'
-brussels-sprout = Meal.new(
+brusselssprout = Meal.new(
   name: "Cheesy Brussels Sprout Bake",
   category: "One Pot Dish",
   cuisine: "Dutch",
-  details: "This is one side dish that will make everyone freak out (and run for seconds). Tastes very reheated as well :)",
+  details: "This is one side dish that will make everyone freak out (and run for seconds).
+  Tastes very reheated as well :)",
   portions: 2,
   diet: "Vegetarian",
-  allergens: 'egg', 'wheat'
+  allergens: 'egg wheat',
   expiry: "2022-09-12",
   address: "Mauenheimer Straße 20, 50733 Cologne"
 )
-file12 = URI.open("https://hips.hearstapps.com/del.h-cdn.co/assets/18/11/1520902273-shot-1-56.jpg?crop=1.0xw:1xh;center,top&resize=980:*")
-brussels-sprout.photos.attach(io: file12, filename: 'brussels-sprout', content_type: 'image/jpg')
-brussels-sprout.user = eri
-brussels-sprout.save
+file13 = URI.open("https://hips.hearstapps.com/del.h-cdn.co/assets/18/11/1520902273-shot-1-56.jpg?crop=1.0xw:1xh;center,top&resize=980:*")
+brusselssprout.photos.attach(io: file13, filename: 'brusselssprout', content_type: 'image/jpg')
+brusselssprout.user = eri
+brusselssprout.save
 
 puts 'creating korean fried chicken...'
-korean-fried-chicken = Meal.new(
+koreanfriedchicken = Meal.new(
   name: "Korean Fried Chicken",
   category: "Side",
   cuisine: "Korean",
-  details: "Nicknamed “candy chicken,” Korean fried chicken is known for its addictively crunchy exterior and its thick sweet-and-spicy sauce.",
+  details: "Nicknamed “candy chicken,” Korean fried chicken is known for its addictively crunchy exterior and its
+  thick sweet-and-spicy sauce.",
   portions: 4,
   diet: "Carnivore",
-  allergens: 'egg', 'wheat', 'chili',
+  allergens: 'egg wheat chili',
   expiry: "2022-09-12",
   address: "Erzbergerplatz 16, 50733 Cologne"
 )
-file13 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/singleimagebug-korean-fried-chicken-1549305127.jpg?crop=1xw:0.9453781512605042xh;center,top&resize=980:*")
-korean-fried-chicken.photos.attach(io: file13, filename: 'korean-fried-chicken', content_type: 'image/jpg')
-korean-fried-chicken.user = natalia
-korean-fried-chicken.save
+file14 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/singleimagebug-korean-fried-chicken-1549305127.jpg?crop=1xw:0.9453781512605042xh;center,top&resize=980:*")
+koreanfriedchicken.photos.attach(io: file14, filename: 'korean-fried-chicken', content_type: 'image/jpg')
+koreanfriedchicken.user = natalia
+koreanfriedchicken.save
 
 puts 'creating beef Bourguignon...'
-beef-b = Meal.new(
+beefb = Meal.new(
   name: "Beef Bourguignon",
   category: "stew",
   cuisine: "Dutch",
-  details: "Here is how I made it: Here's the basic rundown of this labor of love: Sauté bacon, sear beef in bacon fat (yum!), add veggies and stir to coat with flour, add wine and broth, transfer to oven, bake until beef is super-tender, make Julia Child proud.",
+  details: "Here is how I made it: Here's the basic rundown of this labor of love: Sauté bacon,
+  sear beef in bacon fat (yum!), add veggies and stir to coat with flour, add wine and broth,
+  transfer to oven, bake until beef is super-tender, make Julia Child proud.",
   portions: 4,
   diet: "Carnivore",
-  allergens: 'egg', 'wheat', 'chili',
+  allergens: 'egg wheat chili',
   expiry: "2022-09-13",
   address: "Appellhofplatz 16, 50667 Cologne"
 )
-file14 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190828-beef-bourguignon-0154-portrait-pf-1568132096.jpg?crop=1xw:0.9994736842105263xh;center,top&resize=768:*&keepGifs=1")
-beef-b.photos.attach(io: file14, filename: 'beef-b', content_type: 'image/jpg')
-beef-b.user = william
-beef-b.save
+file15 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190828-beef-bourguignon-0154-portrait-pf-1568132096.jpg?crop=1xw:0.9994736842105263xh;center,top&resize=768:*&keepGifs=1")
+beefb.photos.attach(io: file15, filename: 'beef-b', content_type: 'image/jpg')
+beefb.user = william
+beefb.save
 
 puts 'creating creamy vegan pasta...'
-creamy-pasta = Meal.new(
+creamypasta = Meal.new(
   name: "Creamy Vegan Pasta",
   category: "Pasta",
   cuisine: "World",
-  details: "I love putting vegetables at the center of my plate – not only is it good for my health and for the world, but it’s also downright delicious. I would be happy to share my newest creation with you.",
+  details: "I love putting vegetables at the center of my plate – not only is it good for my health and for the world,
+  but it’s also downright delicious. I would be happy to share my newest creation with you.",
   portions: 3,
   diet: "Vegan",
-  allergens: 'wheat'
+  allergens: 'wheat',
   expiry: "2022-09-13",
   address: "Rheingasse 15, 50676 Cologne"
 )
-file15 = URI.open("https://cdn.loveandlemons.com/wp-content/uploads/2019/12/vegan-recipes.jpg")
-creamy-pasta.photos.attach(io: file15, filename: 'creamy-pasta', content_type: 'image/jpg')
-creamy-pasta.user = diego
-creamy-pasta.save
+file16 = URI.open("https://cdn.loveandlemons.com/wp-content/uploads/2019/12/vegan-recipes.jpg")
+creamypasta.photos.attach(io: file16, filename: 'creamy-pasta', content_type: 'image/jpg')
+creamypasta.user = diego
+creamypasta.save
 
 puts 'creating Zucchini Fritters...'
-zucchini-fritters = Meal.new(
+zucchinifritters = Meal.new(
   name: "Zucchini Fritters",
   category: "Baked and Stuffed",
   cuisine: "Dutch",
@@ -315,60 +326,81 @@ zucchini-fritters = Meal.new(
   expiry: "2022-09-11",
   address: "Leonhard-Tietz-Straße 8, 50676 Cologne"
 )
-file16 = URI.open("https://www.thespruceeats.com/thmb/LzlC4zHWABM91kFC76Zl6RAZqkk=/3244x2433/smart/filters:no_upscale()/zucchinifritters-56a5b26b5f9b58b7d0de04f2.jpg")
-zucchini-fritters.photos.attach(io: file16, filename: 'zucchini-fritters', content_type: 'image/jpg')
-zucchini-fritters.user = diego
-zucchini-fritters.save
+file17 = URI.open("https://www.thespruceeats.com/thmb/LzlC4zHWABM91kFC76Zl6RAZqkk=/3244x2433/smart/filters:no_upscale()/zucchinifritters-56a5b26b5f9b58b7d0de04f2.jpg")
+zucchinifritters.photos.attach(io: file17, filename: 'zucchini-fritters', content_type: 'image/jpg')
+zucchinifritters.user = diego
+zucchinifritters.save
 
 puts 'creating caribbean tofu...'
-caribbean-tofu = Meal.new(
+caribbeantofu = Meal.new(
   name: "Caribbean Tofu with Coconut Quinoa",
   category: "Fried",
   cuisine: "Caribbean",
-  details: "This Caribbean Tofu with Coconut Quinoa is a great summery treat. Mixing lime and coconut with earthy spices and fiery chillies may just be the best way to carry them into a summer-read savoury dish.",
+  details: "This Caribbean Tofu with Coconut Quinoa is a great summery treat. Mixing lime and coconut with earthy spices
+  and fiery chillies may just be the best way to carry them into a summer-read savoury dish.",
   portions: 2,
   diet: "Vegan",
-  allergens: 'coconut','soy'
+  allergens: 'coconut soy',
   expiry: "2022-09-12",
   address: "Große Telegraphenstraße 34, 50676 Cologne"
 )
-file17 = URI.open("https://veganuary.com/wp-content/uploads/2016/09/Caribbean-Tofu-2.jpg")
-caribbean-tofu.photos.attach(io: file17, filename: 'caribbean-tofu', content_type: 'image/jpg')
-caribbean-tofu.user = hai
-caribbean-tofu.save
+file18 = URI.open("https://veganuary.com/wp-content/uploads/2016/09/Caribbean-Tofu-2.jpg")
+caribbeantofu.photos.attach(io: file18, filename: 'caribbean-tofu', content_type: 'image/jpg')
+caribbeantofu.user = hai
+caribbeantofu.save
 
 puts 'creating vegan cobbler...'
-vegan-cobbler = Meal.new(
+vegancobbler = Meal.new(
   name: "Vegan Brown Butter Peach Cobbler",
   category: "Dessert",
   cuisine: "French",
-  details: "Peaches and blueberries get swirled with vegan brown butter and cobbler, making for a cake that’s sticky and caramelized on the outside yet fluffy and tender on the inside.",
+  details: "Peaches and blueberries get swirled with vegan brown butter and cobbler, making for a cake that’s sticky
+  and caramelized on the outside yet fluffy and tender on the inside.",
   portions: 5,
   diet: "Vegan",
-  allergens: 'coconut','soy'
+  allergens: 'coconut soy wheat',
   expiry: "2022-09-14",
   address: "Huhnsgasse 34, 50676 Cologne"
 )
-file18 = URI.open("https://rainbowplantlife.com/wp-content/uploads/2020/11/peachblueberrrycobbler287of1029.jpg")
-vegan-cobbler.photos.attach(io: file18, filename: 'vegan-cobbler', content_type: 'image/jpg')
-vegan-cobbler.user = afolabi
-vegan-cobbler.save
+file19 = URI.open("https://rainbowplantlife.com/wp-content/uploads/2020/11/peachblueberrrycobbler287of1029.jpg")
+vegancobbler.photos.attach(io: file19, filename: 'vegan-cobbler', content_type: 'image/jpg')
+vegancobbler.user = afolabi
+vegancobbler.save
 
 puts 'creating tuscan chicken rissoles...'
-tuscan-chicken = Meal.new(
+tuscanchicken = Meal.new(
   name: "Tuscan chicken rissoles",
   category: "Side",
   cuisine: "Italian",
-  details: "These creamy Italian chicken mince rissoles would be great over pasta, mash or polenta or served with crusty bread as an easy weeknight dinner",
+  details: "These creamy Italian chicken mince rissoles would be great over pasta, mash or polenta or served with crusty
+  bread as an easy weeknight dinner",
   portions: 3,
   diet: "Carnivore",
-  allergens: 'meat','wheat'
+  allergens: 'meat wheat',
   expiry: "2022-09-14",
   address: "Lothringer Straße 35, 50677 Cologne"
 )
-file19 = URI.open("https://img.taste.com.au/1KNqPo-z/w720-h480-cfill-q80/taste/2021/10/tuscan-chicken-rissoles-recipe-174147-2.jpg")
-tuscan-chicken.photos.attach(io: file19, filename: 'tuscan-chicken', content_type: 'image/jpg')
-tuscan-chicken.user = axel
-tuscan-chicken.save
+file20 = URI.open("https://img.taste.com.au/1KNqPo-z/w720-h480-cfill-q80/taste/2021/10/tuscan-chicken-rissoles-recipe-174147-2.jpg")
+tuscanchicken.photos.attach(io: file20, filename: 'tuscan-chicken', content_type: 'image/jpg')
+tuscanchicken.user = axel
+tuscanchicken.save
+
+puts 'creating Triple Chocolate Cake...'
+choclatecake = Meal.new(
+  name: "Triple Chocolate Cake",
+  category: "Dessert",
+  cuisine: "German",
+  details: "This is my favorite homemade chocolate cake recipe. With a super moist crumb and fudgy, yet light texture,
+  this chocolate cake recipe will soon be your favorite too.",
+  portions: 4,
+  diet: "Vegetarian",
+  allergens: 'milk eggs wheat',
+  expiry: "2022-09-15",
+  address: "Paul-Schallück-Straße 7, 50939 Cologne"
+)
+file21 = URI.open("https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg")
+choclatecake.photos.attach(io: file21, filename: 'choclate-cake', content_type: 'image/jpg')
+choclatecake.user = axel
+choclatecake.save
 
 puts 'Finished!'
