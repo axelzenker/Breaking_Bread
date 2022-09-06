@@ -29,6 +29,12 @@ class MealsController < ApplicationController
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal
+
+    @markers = [{
+        lat: @meal.latitude,
+        lng: @meal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {meal: @meal})
+      }]
   end
 
   def create
