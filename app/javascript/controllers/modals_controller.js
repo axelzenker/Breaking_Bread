@@ -13,6 +13,15 @@ export default class extends Controller {
 
   fireSweetAlert() {
     const meal = document.querySelector('h1').innerText;
+
+    swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
     swal(`You just ordered 1x ${meal}`, {
       buttons: "go to dashboard",
     }).then((value) => {

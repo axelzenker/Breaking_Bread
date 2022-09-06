@@ -18,7 +18,7 @@
   background-image: linear-gradient(#DDE5EB, #FFAC4B, white);
   .banner{
     display: flex;
-
+    background-color: transparent;
     flex: 1;
 
     #map{
@@ -52,7 +52,7 @@
       .photo {
         height: 200px;
         width: 100%;
-        max-width: 400px;
+        // max-width: 400px;
         object-fit: cover;
       }
       p {
