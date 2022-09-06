@@ -14,55 +14,80 @@
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
   a {
     color: white;
+    width: 60%;
+    line-break: normal;
   }
 }
 
-.content {
+.cardbody{
+  display: inline-block;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-height: 200px;
+}
+
+.card-meal-image > img {
+  height: 100px;
+  width: 100%;
+  object-fit: fill;
+}
+
+.card-meal h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-meal p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-meal .card-meal-infos {
+  padding: 16px;
   display: flex;
-}
-.cards {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 60px;
-  padding: 0 80px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
-#map {
-  height: 95vh;
-  width: 50%;
-  position: sticky;
-  top: 0;
+.card-meal-infos{
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
 
-/*Media Queries*/
+// /*Media Queries*/
 
-/*Smallest device*/
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
+// /*Smallest device*/
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+//   #map {
+//     display: none;
+//   }
+// }
 
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
+// /*Small devices (landscape phones, 576px and up)*/
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+//   #map {
+//     display: none;
+//   }
+// }
 
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  #map {
-    display: block;
-  }
-}
+// /*Medium devices (tablets, 768px and up)*/
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+//   #map {
+//     display: block;
+//   }
