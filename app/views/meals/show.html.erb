@@ -33,7 +33,7 @@
 
       <div class="order">
         <% if @meal.orders %>
-          <p><%="#{@meal.orders.count} left"  %></p>
+          <p><%="#{@meal.orders.count} #{@meal.name} portions have been ordered so far"  %></p>
         <% end %>
         <% if policy(@order).create? %>
           <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
@@ -51,11 +51,13 @@
 
       <%= button_to "Delete this meal", @meal, class: "btn btn-success", method: :delete if policy(@meal).destroy? %>
 
+      <% besteller = [] %>
       <% @meal.orders.each do |order| %>
-        <% if order.user == current_user %>
+        <% besteller << order.user %>
+      <% end %>
+        <% if besteller.include? current_user %>
           <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path, class: "btn btn-success" %>
         <% end %>
-      <% end %>
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ require 'faker'
 Meal.destroy_all
 User.destroy_all
 
+
 # puts 'Creating 5 fake users and 5 fake meals...'
 # 5.times do
 #   user = User.create(
@@ -31,6 +32,7 @@ User.destroy_all
 #   meal.save
 
 # end
+
 
 puts 'Creating 3 admins...'
 
