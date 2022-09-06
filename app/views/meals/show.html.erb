@@ -1,7 +1,7 @@
 <div class="container">
   <div class="flexbox">
     <div class="item1">
-      <div class="photos ">
+      <div class="photos">
         <% @meal.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class:"photo" %>
         <% end %>
@@ -149,7 +149,7 @@
         <% besteller << order.user %>
       <% end %>
         <% if besteller.include? current_user %>
-          <%= link_to "go to dashboard to message #{@meal.user.email}", dashboard_path, class: "btn btn-success" %>
+          <%= link_to "message #{@meal.user.nickname.capitalize}", dashboard_path, class: "btn btn-success" %>
         <% end %>
     </div>
   </div>

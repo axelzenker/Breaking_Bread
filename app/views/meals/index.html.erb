@@ -9,7 +9,7 @@
 
   </div>
   <div class = carousel>
-    <p class= sticky>the meals you have ordered:</p>
+    <p class= sticky>meals of the month</p>
     <% @meals.each do |meal| %>
       <%= link_to meal_path(meal) do %>
         <div class="meal-card">
@@ -17,9 +17,9 @@
 
           <div class="meal-card-infos">
             <div>
-              <p><%= meal.name %></p>
+              <p>made by: <%= meal.user.nickname.capitalize %></p>
             </div>
-            <h2 class="pricing"><%= meal.price %></h2>
+            <h2 class="pricing"> <%= meal.name %></h2>
           </div>
         </div>
       <% end %>
@@ -36,7 +36,7 @@
             <div>
               <p><%= meal.name %></p>
             </div>
-            <h2 class="pricing"><%= meal.price %></h2>
+            <h2 class="pricing">made by: <%= meal.user.nickname.capitalize %></h2>
           </div>
         </div>
       <% end  %>
