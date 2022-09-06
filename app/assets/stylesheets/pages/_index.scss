@@ -8,25 +8,28 @@
   background-color: #F5D4C1;
   padding: 10px;
 }
-
+.container{
+  background-color: #F5D4C1;
+}
 .contain{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 0;
 
-
-  background-image: linear-gradient(#DDE5EB, #FFAC4B, white);
   .banner{
     display: flex;
     background-color: transparent;
     flex: 1;
 
+
     #map{
       height: 50vh;
-      width: 33%;
+      width: 100%;
       border-radius: 15px;
-      margin: 15px;
-      margin-left: auto;
+      margin: auto;
+      margin-top: 10px;
+
     }
   }
   .carousel{

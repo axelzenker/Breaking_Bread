@@ -1,45 +1,46 @@
-<div class = contain>
-  <div class = banner>
+<div class = container>
+  <div class = contain>
+    <div class = banner>
+      <div id="map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
 
-    <div id="map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
-  </div>
-  <div class = carousel>
-    <p class= sticky>meals of the month</p>
-    <% @meals.each do |meal| %>
-      <%= link_to meal_path(meal) do %>
-        <div class="meal-card">
-          <%= cl_image_tag meal.photos.first.key, class:'photo'%>
-
+    <div class = carousel>
+      <p class= sticky>the meals you have ordered:</p>
+      <% @meals.each do |meal| %>
+        <%= link_to meal_path(meal) do %>
+          <div class="meal-card">
+            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+            
           <div class="meal-card-infos">
             <div>
               <p>made by: <%= meal.user.nickname.capitalize %></p>
             </div>
             <h2 class="pricing"> <%= meal.name %></h2>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class = carousel>
-    <p class= sticky>the meals you have ordered:</p>
-    <% @meals.each do |meal| %>
-      <%= link_to meal_path(meal) do %>
-        <div class="meal-card">
-          <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
-          <div class="meal-card-infos">
-            <div>
-              <p><%= meal.name %></p>
-            </div>
-            <h2 class="pricing">made by: <%= meal.user.nickname.capitalize %></h2>
           </div>
-        </div>
-      <% end  %>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class = carousel>
+      <p class= sticky>the meals you have ordered:</p>
+      <% @meals.each do |meal| %>
+        <%= link_to meal_path(meal) do %>
+          <div class="meal-card">
+            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+
+            <div class="meal-card-infos">
+              <div>
+                <p><%= meal.name %></p>
+              </div>
+              <h2 class="pricing">made by: <%= meal.user.nickname.capitalize %></h2>
+            </div>
+          </div>
+        <% end  %>
+      <% end %>
+    </div>
   </div>
 </div>
