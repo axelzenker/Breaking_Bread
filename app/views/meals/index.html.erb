@@ -1,5 +1,5 @@
-<div class = contain>
-  <div class = banner>
+<div class="contain">
+  <div class="banner">
 
     <div id="map"
       data-controller="map"
@@ -13,15 +13,25 @@
     <% @meals.each do |meal| %>
       <div class="meal-card">
         <%= cl_image_tag meal.photos.first.key, class:'photo'%>
-
         <div class="meal-card-infos">
           <div>
             <p><%= meal.name %></p>
           </div>
           <h2 class="pricing"><%= meal.price %></h2>
         </div>
+        <div class="card-meal-infos">
+            <div>
+            <h2><%= link_to meal.name, meal_path(meal) %></h2>
+            <p><%= meal.details %></p>
+            </div>
+            <div>
+            <h2 class="card-meal-cuisine"><%= meal.cuisine %></h2>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
   <div class = carousel>
     <p class= sticky>the meals you have ordered:</p>
@@ -37,5 +47,5 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
