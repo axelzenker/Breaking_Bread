@@ -13,7 +13,7 @@ User.destroy_all
 puts 'Creating 14 admins...'
 
 afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi')
-hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai')
+hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai',   )
 axel = User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel')
 ronna = User.create(email: 'ronna@gmail.com', password: '1234567', nickname: 'Ronna Farley')
 josephine = User.create(email: 'josephine@gmail.com', password: '1234567', nickname: 'Josephine Parton')

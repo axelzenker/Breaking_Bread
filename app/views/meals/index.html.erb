@@ -14,13 +14,13 @@
         <%= link_to meal_path(meal) do %>
           <div class="meal-card">
             <%= cl_image_tag meal.photos.first.key, class:'photo'%>
-
-            <div class="meal-card-infos">
-              <div>
-                <p><%= meal.name %></p>
-              </div>
-              <h2 class="pricing"><%= meal.price %></h2>
+            
+          <div class="meal-card-infos">
+            <div>
+              <p>made by: <%= meal.user.nickname.capitalize %></p>
             </div>
+            <h2 class="pricing"> <%= meal.name %></h2>
+
           </div>
         <% end %>
       <% end %>
@@ -36,7 +36,7 @@
               <div>
                 <p><%= meal.name %></p>
               </div>
-              <h2 class="pricing"><%= meal.price %></h2>
+              <h2 class="pricing">made by: <%= meal.user.nickname.capitalize %></h2>
             </div>
           </div>
         <% end  %>
