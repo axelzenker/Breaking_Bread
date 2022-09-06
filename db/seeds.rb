@@ -29,6 +29,7 @@ natalia = User.create(email: 'natalia@gmail.com', password: '1234567', nickname:
 diego = User.create(email: 'diego@gmail.com', password: '1234567', nickname: 'Diego')
 
 
+
 puts 'Creating 19 delicious real meals...'
 
 puts 'creating Tonkotsu Ramen...'
