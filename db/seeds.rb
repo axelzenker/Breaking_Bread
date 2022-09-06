@@ -16,7 +16,7 @@ afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickna
 hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai')
 User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel')
 
-puts 'Creating 10 delicious real meals...'
+puts 'Creating 5 delicious real meals...'
 
 takumi = Meal.new(
   name: "Tonkotsu Ramen",

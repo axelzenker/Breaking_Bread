@@ -3,24 +3,115 @@
     <div class="item1">
       <div class="photos ">
         <% @meal.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"photo" %>
+          <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class:"photo" %>
         <% end %>
       </div>
 
       <div class="details">
         <h1><%= @meal.name %></h1>
-        <p><%= "made by #{@meal.user.nickname}" %></p>
-        <p><%= "catergory: #{@meal.category}" %></p>
-        <p><%="cuisine:#{@meal.cuisine}"  %></p>
-        <p><%= 'details:'  %></p>
-        <p><%= " #{@meal.details}" %></p>
-        <p><%= "portion: #{@meal.portions}" %></p>
-        <p><%= "diet-restrictions: #{@meal.diet}" %></p>
-        <p><%="allergens: #{@meal.allergens }" %></p>
-        <p><%= "price: #{@meal.price}" %></p>
-        <p><%= "reservation min: #{@meal.reservation_min}" %></p>
-        <p><%= "expiry: #{@meal.expiry}" %></p>
-        <p><%= "Address: #{@meal.address}"  %></p>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <p> 🧑‍🤝‍🧑 made by:</p>
+            </div>
+            <div class="col-8">
+              <p><%=@meal.user.nickname %></p>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-4">
+              <p> 📇category: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.category %></p>
+            </div>
+          </div>
+
+         <div class="row">
+            <div class="col-4">
+              <p> 🌍 cuisine: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.cuisine %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <p> 📜ℹ️  details: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.details %></p>
+            </div>
+          </div>
+
+         <div class="row">
+            <div class="col-4">
+              <p> 🍱 portions: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.portions %></p>
+            </div>
+          </div>
+
+           <div class="row">
+            <div class="col-4">
+              <p> 🥬 dietary restrictions: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.diet %></p>
+            </div>
+          </div>
+
+         <div class="row">
+            <div class="col-4">
+              <p> 💀 allergens: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.allergens %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <p> 💶 price: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.price %></p>
+            </div>
+          </div>
+
+           <div class="row align-items-center">
+            <div class="col-4">
+              <p> #️⃣ minimum reservations: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.reservation_min %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <p> 🍄 expiry: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.expiry %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <p> 🗺️ address: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @meal.address %></p>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
 
@@ -45,8 +136,10 @@
               } %>
         <% end %>
       </div>
+
+
       <% if policy(@meal).edit? %>
-        <%= button_to "Edit this meal", edit_meal_path(@meal), class: "btn btn-success"%>
+        <%= link_to "Edit this meal", edit_meal_path(@meal), class: "btn btn-success"%>
       <% end %>
 
       <%= button_to "Delete this meal", @meal, class: "btn btn-success", method: :delete if policy(@meal).destroy? %>
