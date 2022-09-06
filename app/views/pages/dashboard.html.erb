@@ -1,24 +1,41 @@
-<p>your email address:</p>
-<p><%= @user.email %></p>
-<br>
-<p>the meals you are offering:</p>
-<% @meals_offered.each do |meal| %>
-  <p><%= meal.name %></p>
-  <%= pluralize meal.orders.size, "orders"  %> have been placed:
-  <ul>
-    <% meal.orders.each do |order| %>
-    <li><%= order.user.nickname %> placed an order <%= link_to 'Start a Chat', chatroom_order_path(order) %></li>
+<div class = container>
+  <div class = userinfo>
+    <div class = details>
+      <h1>Hello <%= current_user.nickname %></h1>
+      <div class = dashboard-btn>
+        <p><%= link_to "Post new meal", new_meal_path, class: "btn btn-success" %></p>
+        <p><%= link_to "Discover meals", meals_path, class: "btn btn-success" %></p>
+      </div>
+    </div>
+    <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
+  </div>
+  <div class = carousel>
+    <p class= sticky>the meals you have offered:</p>
+    <% current_user.meals.each do |meal| %>
+      <div class="meal-card">
+        <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+        <div class="meal-card-infos">
+          <div>
+            <p><%= meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= meal.price %></h2>
+        </div>
+      </div>
     <% end %>
-  </ul>
-<% end %>
-<br>
+  </div>
+  <div class = carousel>
+    <p class= sticky>the meals you have ordered:</p>
+    <% current_user.orders.each do |order| %>
+      <div class="meal-card">
+        <%= cl_image_tag order.meal.photos.first.key, class:'photo'%>
 
-<p>the meals you have ordered:</p>
-<% @orders.each do |order| %>
-  <p><%= order.meal.name%></p>
-  <p><%= order.meal.user.email%></p>
-  <%= link_to 'Start a Chat', chatroom_order_path(order) %>
-<% end %>
-<br>
-<p><%= link_to 'discover meal', meals_path %></p>
-<p><%= link_to 'post a meal', new_meal_path %></p>
+        <div class="meal-card-infos">
+          <div>
+            <p><%= order.meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= order.meal.price %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
