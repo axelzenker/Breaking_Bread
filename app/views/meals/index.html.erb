@@ -8,14 +8,16 @@
     </div>
 
   </div>
-  <div>
-    <div class=sticky><p>Top rated Chefs</p>
-    </div>
-    <div class="cards">
-      <% @meals.first(2).each do |meal| %>
-      <div class="cardbody">
-        <div class="card-meal">
-          <%= image_tag "https://avatars.githubusercontent.com/u/77808978?v=4" %>
+  <div class = carousel>
+    <p class= sticky>the meals you have ordered:</p>
+    <% @meals.each do |meal| %>
+      <div class="meal-card">
+        <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+        <div class="meal-card-infos">
+          <div>
+            <p><%= meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= meal.price %></h2>
         </div>
         <div class="card-meal-infos">
             <div>
@@ -31,16 +33,18 @@
       </div>
     </div>
   </div>
-  <%# <div class = car2>
-    <div class=sticky2><p>top rated chef</p></div>
+  <div class = carousel>
+    <p class= sticky>the meals you have ordered:</p>
     <% @meals.each do |meal| %>
-      <%# <div class = passangers2>
+      <div class="meal-card">
+        <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
-        <% url = meal.photos.attached? ? meal.photos.first.url : 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b-4.jpg?fit=700,1024' %>
-
-        <%# <div class = "card" style="background-image: url(<%= "#{url}" %>
-          <%# <%= link_to meal.name, meal_path(meal) %>
-        <%# </div>
+        <div class="meal-card-infos">
+          <div>
+            <p><%= meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= meal.price %></h2>
+        </div>
       </div>
     <% end %>
   <%# </div> %>

@@ -1,34 +1,43 @@
-<div class="dashboard">
-  <p>Hey:</p>
-  <p><%= @user.nickname %></p>
-  <br>
-  <p>You are offering the following meals:</p>
-  <% @meals_offered.each do |meal| %>
-    <p><%= meal.name %></p>
-    <%= pluralize meal.orders.size, "orders"  %> have been placed:
-    <ul>
-      <% meal.orders.each do |order| %>
-      <li><%= order.user.nickname %> placed an order <%= link_to 'Start a Chat', chatroom_order_path(order) %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <br>
 
-    <p>You ordered the following meals:</p>
-  <div class="dashboard-order">
-    <% @orders.each do |order| %>
-      <p><strong><%= order.meal.name%></strong></p>
-      <p><%= order.meal.user.email%></p>
-      <div class="btn-dashboard justify-content-center">
-        <%= link_to 'Chat', chatroom_order_path(order) %>
+<div class = container>
+  <div class = userinfo>
+    <div class = details>
+      <h1>Hello <%= current_user.nickname %></h1>
+      <div class = dashboard-btn>
+        <p><%= link_to "Post new meal", new_meal_path, class: "btn btn-success" %></p>
+        <p><%= link_to "Discover meals", meals_path, class: "btn btn-success" %></p>
+      </div>
+    </div>
+    <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
+  </div>
+  <div class = carousel>
+    <p class= sticky>the meals you have offered:</p>
+    <% current_user.meals.each do |meal| %>
+      <div class="meal-card">
+        <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+        <div class="meal-card-infos">
+          <div>
+            <p><%= meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= meal.price %></h2>
+        </div>
       </div>
     <% end %>
   </div>
-  <br>
-  <div class="btn-dashboard">
-    <p><%= link_to 'Discover Meals', meals_path %></p>
+  <div class = carousel>
+    <p class= sticky>the meals you have ordered:</p>
+    <% current_user.orders.each do |order| %>
+      <div class="meal-card">
+        <%= cl_image_tag order.meal.photos.first.key, class:'photo'%>
+
+        <div class="meal-card-infos">
+          <div>
+            <p><%= order.meal.name %></p>
+          </div>
+          <h2 class="pricing"><%= order.meal.price %></h2>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="btn-dashboard">
-    <p><%= link_to 'Post a Meal', new_meal_path %></p>
-  <div/>
+
 </div>

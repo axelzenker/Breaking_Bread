@@ -29,7 +29,6 @@ class MealsController < ApplicationController
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal
-
   end
 
   def create

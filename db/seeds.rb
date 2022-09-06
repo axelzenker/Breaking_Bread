@@ -10,7 +10,7 @@ require 'faker'
 Meal.destroy_all
 User.destroy_all
 
-puts 'Creating 13 admins...'
+puts 'Creating 14 admins...'
 
 afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi')
 hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai')
