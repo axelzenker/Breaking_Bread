@@ -10,6 +10,30 @@ require 'faker'
 Meal.destroy_all
 User.destroy_all
 
+
+# puts 'Creating 5 fake users and 5 fake meals...'
+# 5.times do
+#   user = User.create(
+#     email:    Faker::Internet.email,
+#     password: Faker::Internet.password
+#   )
+#   meal = Meal.new(
+#     name: Faker::Food.dish,
+#     category: ['breakfast', 'lunch', 'dinner'].sample,
+#     cuisine: Faker::Food.ethnic_category,
+#     details: Faker::Food.description,
+#     portions: [1, 2, 3, 4].sample,
+#     diet: ['vegan', 'keto', 'no-restrictions', 'paleo', 'carnivore'].sample,
+#     allergens: ['none', 'peanut', 'none', 'gluten', 'shellfish', 'wheat', 'none', 'none', 'lactose'].sample,
+#     expiry: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+#     address: Faker::Address.city
+#   )
+#   meal.user = user
+#   meal.save
+
+# end
+
+
 puts 'Creating 3 admins...'
 
 afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi')
