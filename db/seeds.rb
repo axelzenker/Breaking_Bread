@@ -40,7 +40,7 @@ tonkotsu-ramen = Meal.new(
   details: "I was inspired to make this recipe after I couldn't stop thinking of a similar dish served in my elementary school cafeteria more than 50 years ago! I would love to share one of my favorite meals.",
   portions: 1,
   diet: "normal",
-  allergens: 'Sesame','Wheat','Eggs','Fish',
+  allergens: 'Sesame, Wheat, Eggs, Fish',
   expiry: "2022-09-12",
   address: "Spichernstraße 8, 50672 Cologne"
 )
