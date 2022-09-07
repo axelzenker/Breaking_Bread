@@ -3,7 +3,7 @@
     <div class="item1">
       <div class="photos">
         <% @meal.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class:"photo" %>
+          <%= cl_image_tag photo.key, class:"photo" %>
         <% end %>
       </div>
 
