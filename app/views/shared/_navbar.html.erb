@@ -2,47 +2,51 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= "Breaking Bread" %>
-    <% end %>
-
-  <div class="search-bar">
-    <%= form_with url: meals_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        placeholder: "🔎 Find a meal"
-      %>
-      <%= submit_tag "Search", class: "search-button" %>
-    <% end %>
-  </div>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", dashboard_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://avatars.githubusercontent.com/u/77808978?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "All Meals", meals_path, class: "dropdown-item" %>
-              <%= link_to "Add a Meal", new_meal_path, class: "dropdown-item" %>
-              <%= link_to "Account", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+<div style="background-color: #DDE5EB;">
+  <div class= navbar-container>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= "Breaking Bread" %>
         <% end %>
-      </ul>
+
+      <div class="search-bar">
+        <%= form_with url: meals_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            placeholder: "🔎 Find a meal"
+          %>
+          <%= submit_tag "Search", class: "search-button" %>
+        <% end %>
+      </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item dropdown">
+                <%= image_tag "https://avatars.githubusercontent.com/u/77808978?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "All Meals", meals_path, class: "dropdown-item" %>
+                  <%= link_to "Add a Meal", new_meal_path, class: "dropdown-item" %>
+                  <%= link_to "Account", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
