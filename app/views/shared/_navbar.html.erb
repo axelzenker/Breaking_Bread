@@ -2,25 +2,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to meals_path, class: "navbar-brand" do %>
       <%= "Breaking Bread" %>
     <% end %>
 
-  <div class="search-bar">
-    <%= form_with url: meals_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        placeholder: "🔎 Find a meal"
-      %>
-      <%= submit_tag "Search", class: "search-button" %>
-    <% end %>
-  </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="search-bar">
+        <%= form_with url: meals_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            placeholder: "🔎 Find a meal"
+          %>
+          <%= submit_tag "Search", class: "search-button" %>
+        <% end %>
+      </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -44,6 +47,7 @@
           </li>
         <% end %>
       </ul>
+
     </div>
   </div>
 </div>

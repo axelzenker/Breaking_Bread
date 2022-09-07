@@ -1,14 +1,18 @@
 
-<div class = container>
+<div class = "container dash-container backgroundcolour">
   <div class = userinfo>
     <div class = details>
       <h1>Hello <%= current_user.nickname %></h1>
+      <h2><% current_user.description %></h2>
       <div class = dashboard-btn>
         <p><%= link_to "Break Bread", new_meal_path, class: "btn btn-success" %></p>
         <p><%= link_to "Discover meals", meals_path, class: "btn btn-success" %></p>
       </div>
     </div>
-    <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
+      <figure class= img>
+        <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
+      <figcaption>Absolute Foody. Living in Moers.</figcaption>
+      </figure>
   </div>
   <div class = carousel>
     <p class= sticky>the meals you have offered:</p>
@@ -41,6 +45,7 @@
             <p class = expiry>You,ve ordered this meal
             <%= " #{pluralize( @user.orders.count{|order| order.meal == meal }, 'time' )}" %>
             </p>
+            <h2 class="pricing"><%= link_to "Chat with #{order.meal.user.nickname}", chatroom_order_path(order) %></h2>
           </div>
         </div>
       <% end %>

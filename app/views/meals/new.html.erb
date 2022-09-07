@@ -1,4 +1,4 @@
-<div class="container mealformcont p-5">
+<div class="container backgroundcolour mealformcont p-5">
   <h1>Add your meal</h1>
     <%= simple_form_for @meal do |f| %>
       <%= f.input :name %>
@@ -12,6 +12,8 @@
       <%= f.input :expiry %>
       <%= f.input :reservation_min %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.button :submit, class:"btn-create" %>
+    <div class="btn-create">
+      <%= f.button :submit %>
+    </div>
     <% end %>
 </div>
