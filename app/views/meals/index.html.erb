@@ -25,22 +25,51 @@
         <% end %>
       <% end %>
     </div>
-    <div class = carousel>
-      <p class= sticky>most popular</p>
-      <% @meals.each do |meal| %>
-        <%= link_to meal_path(meal) do %>
-          <div class="meal-card">
-            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
-            <div class="meal-card-infos">
-              <div>
-                <p><%= meal.user.nickname.capitalize %></p>
+<% randfactor = rand(2).floor%>
+
+  <% case randfactor %>
+    <% when 0 %>
+      <div class = carousel>
+        <p class= sticky>leafy meals</p>
+        <% @selection = Meal.where(diet: "Vegan" ) %>
+        <% @selection.each do |meal| %>
+          <%= link_to meal_path(meal) do %>
+            <div class="meal-card">
+              <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+
+              <div class="meal-card-infos">
+                <div>
+                  <p><%= meal.user.nickname.capitalize %></p>
+                </div>
+                <h2 class="pricing"><%= meal.name %></h2>
               </div>
-              <h2 class="pricing"><%= meal.name %></h2>
             </div>
-          </div>
-        <% end  %>
-      <% end %>
-    </div>
+          <% end  %>
+        <% end %>
+      </div>
+
+
+    <% when 1 %>
+      <div class = carousel>
+        <p class= sticky>meaty meals</p>
+        <% @selection = Meal.where(diet: "Carnivore" ) %>
+        <% @selection.each do |meal| %>
+          <%= link_to meal_path(meal) do %>
+            <div class="meal-card">
+              <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+
+              <div class="meal-card-infos">
+                <div>
+                  <p><%= meal.user.nickname.capitalize %></p>
+                </div>
+                <h2 class="pricing"><%= meal.name %></h2>
+              </div>
+            </div>
+          <% end  %>
+        <% end %>
+      </div>
+  <% end %>
+
   </div>
 </div>
