@@ -24,7 +24,7 @@
             <div>
               <p><%= meal.name %></p>
             </div>
-            <h2 class="pricing"><%= meal.price %></h2>
+            <h2 class="expiry"><%= "Good till #{meal.expiry}"  %></h2>
           </div>
         </div>
       <% end %>
@@ -33,15 +33,18 @@
   <div class = carousel>
     <p class= sticky>the meals you have ordered:</p>
 
-    <% current_user.orders.reverse.each do |order| %>
-      <%= link_to meal_path(order.meal) do %>
+    <% @unique_meals.reverse.each do |meal| %>
+      <%= link_to meal_path(meal) do %>
         <div class="meal-card">
-          <%= cl_image_tag order.meal.photos.first.key, class:'photo'%>
+          <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
           <div class="meal-card-infos">
             <div>
-              <p><%= order.meal.name %></p>
+              <p><%= meal.name %></p>
             </div>
+            <p class = expiry>You,ve ordered this meal
+            <%= " #{pluralize( @user.orders.count{|order| order.meal == meal }, 'time' )}" %>
+            </p>
             <h2 class="pricing"><%= link_to "Chat with #{order.meal.user.nickname}", chatroom_order_path(order) %></h2>
           </div>
         </div>
