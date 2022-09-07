@@ -13,7 +13,8 @@ class MealsController < ApplicationController
       {
         lat: meal.latitude,
         lng: meal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {meal: meal})
+        info_window: render_to_string(partial: "info_window", locals: {meal: meal}),
+        image_url: helpers.asset_url("breademoji.png")
       }
     end
   end
@@ -33,7 +34,8 @@ class MealsController < ApplicationController
     @markers = [{
         lat: @meal.latitude,
         lng: @meal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {meal: @meal})
+        info_window: render_to_string(partial: "info_window", locals: {meal: @meal}),
+        image_url: helpers.asset_url("breademoji.png")
       }]
   end
 
