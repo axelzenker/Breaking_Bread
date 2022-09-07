@@ -1,18 +1,18 @@
 .container {
-  justify-content: center;
+  align-items: center;
 
   .form {
-  text-align: center;
-  width:600px;
-  padding:20px;
+    text-align: center;
+    width:600px;
+    padding:20px;
+    margin-bottom: 30px;
   }
-}
-
-.btn-create {
-  align-items: center;
-  width: 50%;
-  background-color: white;
-  border: 1px solid #4A4A4A;
-  padding: 8px 30px;
-  border-radius: 50px;
+  .btn-create {
+    width: 50%;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #4A4A4A;
+    border-radius: 50px;
+    margin-top: 30px;
+  }
 }
