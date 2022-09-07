@@ -9,7 +9,7 @@
 
       <div class="details">
         <h1><%= @meal.name %></h1>
-        <div class="container">
+        <div class="container container-background">
           <div class="row">
             <div class="col-4">
               <p> 🧑‍🤝‍🧑 made by:</p>
@@ -149,7 +149,10 @@
         <% besteller << order.user %>
       <% end %>
         <% if besteller.include? current_user %>
-          <%= link_to "message #{@meal.user.nickname.capitalize}", dashboard_path, class: "btn btn-success" %>
+          <% @meal.orders.find do |order| %>
+          <%  order.user == current_user %>
+            <%= link_to "message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn btn-success" %>
+          <% end %>
         <% end %>
     </div>
   </div>
