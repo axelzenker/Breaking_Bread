@@ -1,6 +1,9 @@
 <div class="container">
+  <div class="meal-name">
+  <p><%= @meal.name %></p>
+  </div>
   <div class="flexbox">
-    <div class="item1">
+  <div class="item1">
       <div class="photos">
         <% @meal.photos.each do |photo| %>
           <%= cl_image_tag photo.key, class:"photo" %>
@@ -9,7 +12,7 @@
 
       <div class="details">
       <br>
-        <h1><%= @meal.name %></h1>
+
         <div class="container container-background">
           <div class="row">
             <div class="col-4">
