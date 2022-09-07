@@ -1,16 +1,17 @@
-<h1>update new meal</h1>
-<p><%= link_to 'back to meals', meals_path %></p>
-  <%= simple_form_for @meal do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :category %>
-    <%= f.input :details %>
-    <%= f.input :cuisine %>
-    <%= f.input :diet %>
-    <%= f.input :portions %>
-    <%= f.input :allergens %>
-    <%= f.input :expiry %>
-    <%= f.input :reservation_min %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, class:"btn-create" %>
-  <% end %>
+<div class="container backgroundcolour mealformcont p-5">
+  <h1>update new meal</h1>
+    <%= simple_form_for @meal do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category %>
+      <%= f.input :details %>
+      <%= f.input :cuisine %>
+      <%= f.input :diet %>
+      <%= f.input :portions %>
+      <%= f.input :allergens %>
+      <%= f.input :expiry %>
+      <%= f.input :reservation_min %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.button :submit, class:"btn-create" %>
+    <% end %>
+</div>

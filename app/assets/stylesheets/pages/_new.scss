@@ -2,6 +2,7 @@
 .mealformcont {
   align-items: center;
 
+
   .form {
     text-align: center;
     width:600px;
@@ -9,11 +10,13 @@
     margin-bottom: 30px;
   }
   .btn-create {
-    width: 50%;
+    text-align: center;
+    width: 30%;
     height: 50px;
     background-color: white;
     border: 1px solid #4A4A4A;
     border-radius: 50px;
     margin-top: 30px;
+    margin-left: 380px;
   }
 }
