@@ -10,16 +10,16 @@
     </div>
     <div class = carousel>
       <p class= sticky>meals of the month</p>
-      <% @meals.each do |meal| %>
+      <% @meals.reverse.each do |meal| %>
         <%= link_to meal_path(meal) do %>
           <div class="meal-card">
             <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
             <div class="meal-card-infos">
               <div>
-                <p><%= meal.name %></p>
+                  <p><%= meal.user.nickname.capitalize %></p>
               </div>
-              <h2 class="pricing"> made by: <%= meal.user.nickname.capitalize %></h2>
+              <h2 class="expiry"><%= meal.name %></h2>
             </div>
           </div>
         <% end %>
@@ -42,7 +42,7 @@
                 <div>
                   <p><%= meal.user.nickname.capitalize %></p>
                 </div>
-                <h2 class="pricing"><%= meal.name %></h2>
+                <h2 class="expiry"><%= meal.name %></h2>
               </div>
             </div>
           <% end  %>

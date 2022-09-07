@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
-  border-radius: 15px;
   padding-bottom: 15px;
   .userinfo {
     display: flex;
@@ -43,6 +41,8 @@
       position: sticky;
       top: 0;
       left: 0;
+      font-weight: 600;
+      font-size: 25px;
     }
     .meal-card {
       border-radius: 16px;
@@ -67,6 +67,9 @@
       }
       h2{
         padding: 5px;
+      }
+      .expiry{
+        font-size: large;
       }
 
     }

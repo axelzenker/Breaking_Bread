@@ -40,7 +40,7 @@ tonkotsuramen = Meal.new(
   portions: 1,
   diet: "normal",
   allergens: 'Sesame, Wheat, Eggs, Fish',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Spichernstraße 8, 50672 Cologne"
 )
 file1 = URI.open("https://takumi.koeln/wp-content/uploads/2021/10/ramen-koeln-2-shio.jpg")
@@ -57,7 +57,7 @@ beefshrooms = Meal.new(
   portions: 2,
   diet: "Carnivore",
   allergens: 'mushrooms, wheat',
-  expiry: "2022-09-14",
+  expiry: "14.09.2022",
   address: "Meister-Ekkehart-Straße 9, 50937 Cologne"
 )
 file2 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b-4.jpg?fit=700,1024")
@@ -76,7 +76,7 @@ salchow = Meal.new(
   portions: 8,
   diet: "Pescetarian",
   allergens: 'fish',
-  expiry: "2022-09-15",
+  expiry: "15.09.2022",
   address: "Zülpicher Straße 203, 50937 Cologne"
 )
 file3 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Northwest-Salmon-Chowder_EXPS_COTS21_9594_G05_04_1b.jpg?fit=700,1024")
@@ -94,7 +94,7 @@ creojam = Meal.new(
   portions: 5,
   diet: "Carnivore",
   allergens: 'fish',
-  expiry: "2022-09-10",
+  expiry: "12.09.2022",
   address: "Lothringer Straße 22, 50677 Cologne"
 )
 file4 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps3123_SF143315D11_05_5b_WEB-2.jpg?fit=700,1024")
@@ -111,7 +111,7 @@ sumrolls = Meal.new(
   portions: 8,
   diet: "Vegan",
   allergens: '',
-  expiry: "2022-09-10",
+  expiry: "10.09.2022",
   address: "Maternusstraße 15, 50678 Cologne"
 )
 file5 = URI.open("https://cdn.statically.io/img/www.aheadofthyme.com/f=auto//wp-content/uploads/2021/07/vietnamese-summer-rolls-with-chicken-2.jpg")
@@ -128,7 +128,7 @@ jollof = Meal.new(
   portions: 3,
   diet: "Vegetarian",
   allergens: 'includes Meat broth',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Karl-Korn-Straße 10, 50678 Cologne"
 )
 file6 = URI.open("https://cheflolaskitchen.com/wp-content/uploads/2018/10/Jollof-Rice-55.jpg")
@@ -145,7 +145,7 @@ beefpaprikash = Meal.new(
   portions: 6,
   diet: "Carnivore",
   allergens: 'wheat butter meat',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Biberstraße 32, 50678 Cologne"
 )
 file7 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps187883_TH153343C04_14_2b-1.jpg?fit=700,1024")
@@ -163,7 +163,7 @@ chickenriceskillet = Meal.new(
   portions: 6,
   diet: "Carnivore",
   allergens: 'wheat butter meat',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Landsbergstraße 26, 50678 Cologne"
 )
 file8 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Rice-Skillet_EXPS_MIOPBZ17_15416_C10_13_5b-4.jpg?fit=700,1024")
@@ -181,7 +181,7 @@ beanbeefchili = Meal.new(
   portions: 3,
   diet: "Carnivore",
   allergens: 'wheat butter meat onion',
-  expiry: "2022-09-14",
+  expiry: "14.09.2022",
   address: "Löwengasse 9, 50676 Cologne"
 )
 file9 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps79528_SD153319B10_07_5b-2.jpg?fit=700,1024")
@@ -198,7 +198,7 @@ haystraw = Meal.new(
   portions: 4,
   diet: "Carnivore",
   allergens: 'wheat butter meat onion',
-  expiry: "2022-09-14",
+  expiry: "14.09.2022",
   address: "Krummer Büchel 2, 50676 Cologne"
 )
 file10 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps21282_FF163882B01_13_6b.jpg?fit=700,1024")
@@ -215,7 +215,7 @@ beansoup = Meal.new(
   portions: 4,
   diet: "Carnivore",
   allergens: 'meat',
-  expiry: "2022-09-10",
+  expiry: "10.09.2022",
   address: "Wöhlerstraße 35, 50823 Cologne"
 )
 file11 = URI.open("https://img.chefkoch-cdn.de/rezepte/999441205246890/bilder/1351902/crop-960x640/leckere-gruene-bohnensuppe.jpg")
@@ -233,7 +233,7 @@ frenchtoast = Meal.new(
   portions: 4,
   diet: "Vegetarian",
   allergens: 'egg wheat',
-  expiry: "2022-09-10",
+  expiry: "10.09.2022",
   address: "Siebachstraße 105, 50733 Cologne"
 )
 file12 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-220823-hong-kong-french-toast-388-horizontal-rv-web-1662038739.jpg?crop=0.895xw:0.855xh;0.0646xw,0.128xh&resize=980:*")
@@ -251,7 +251,7 @@ brusselssprout = Meal.new(
   portions: 2,
   diet: "Vegetarian",
   allergens: 'egg wheat',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Mauenheimer Straße 20, 50733 Cologne"
 )
 file13 = URI.open("https://hips.hearstapps.com/del.h-cdn.co/assets/18/11/1520902273-shot-1-56.jpg?crop=1.0xw:1xh;center,top&resize=980:*")
@@ -269,7 +269,7 @@ koreanfriedchicken = Meal.new(
   portions: 4,
   diet: "Carnivore",
   allergens: 'egg wheat chili',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Erzbergerplatz 16, 50733 Cologne"
 )
 file14 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/singleimagebug-korean-fried-chicken-1549305127.jpg?crop=1xw:0.9453781512605042xh;center,top&resize=980:*")
@@ -288,7 +288,7 @@ beefb = Meal.new(
   portions: 4,
   diet: "Carnivore",
   allergens: 'egg wheat chili',
-  expiry: "2022-09-13",
+  expiry: "13.09.2022",
   address: "Appellhofplatz 16, 50667 Cologne"
 )
 file15 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190828-beef-bourguignon-0154-portrait-pf-1568132096.jpg?crop=1xw:0.9994736842105263xh;center,top&resize=768:*&keepGifs=1")
@@ -306,7 +306,7 @@ creamypasta = Meal.new(
   portions: 3,
   diet: "Vegan",
   allergens: 'wheat',
-  expiry: "2022-09-13",
+  expiry: "13.09.2022",
   address: "Rheingasse 15, 50676 Cologne"
 )
 file16 = URI.open("https://cdn.loveandlemons.com/wp-content/uploads/2019/12/vegan-recipes.jpg")
@@ -323,7 +323,7 @@ zucchinifritters = Meal.new(
   portions: 1,
   diet: "Vegan",
   allergens: '',
-  expiry: "2022-09-11",
+  expiry: "11.09.2022",
   address: "Leonhard-Tietz-Straße 8, 50676 Cologne"
 )
 file17 = URI.open("https://www.thespruceeats.com/thmb/LzlC4zHWABM91kFC76Zl6RAZqkk=/3244x2433/smart/filters:no_upscale()/zucchinifritters-56a5b26b5f9b58b7d0de04f2.jpg")
@@ -341,7 +341,7 @@ caribbeantofu = Meal.new(
   portions: 2,
   diet: "Vegan",
   allergens: 'coconut soy',
-  expiry: "2022-09-12",
+  expiry: "12.09.2022",
   address: "Große Telegraphenstraße 34, 50676 Cologne"
 )
 file18 = URI.open("https://veganuary.com/wp-content/uploads/2016/09/Caribbean-Tofu-2.jpg")
@@ -359,7 +359,7 @@ vegancobbler = Meal.new(
   portions: 5,
   diet: "Vegan",
   allergens: 'coconut soy wheat',
-  expiry: "2022-09-14",
+  expiry: "14.09.2022",
   address: "Huhnsgasse 34, 50676 Cologne"
 )
 file19 = URI.open("https://rainbowplantlife.com/wp-content/uploads/2020/11/peachblueberrrycobbler287of1029.jpg")
@@ -377,7 +377,7 @@ tuscanchicken = Meal.new(
   portions: 3,
   diet: "Carnivore",
   allergens: 'meat wheat',
-  expiry: "2022-09-14",
+  expiry: "14.09.2022",
   address: "Lothringer Straße 35, 50677 Cologne"
 )
 file20 = URI.open("https://img.taste.com.au/1KNqPo-z/w720-h480-cfill-q80/taste/2021/10/tuscan-chicken-rissoles-recipe-174147-2.jpg")
@@ -395,7 +395,7 @@ choclatecake = Meal.new(
   portions: 4,
   diet: "Vegetarian",
   allergens: 'milk eggs wheat',
-  expiry: "2022-09-15",
+  expiry: "15.09.2022",
   address: "Paul-Schallück-Straße 7, 50939 Cologne"
 )
 file21 = URI.open("https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg")

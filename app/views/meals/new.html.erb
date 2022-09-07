@@ -12,7 +12,8 @@
       <%= f.input :expiry %>
       <%= f.input :reservation_min %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.button :submit, class:"btn" %>
+    <div class="btn-create">
+      <%= f.button :submit %>
+    </div>
     <% end %>
-  <p><%= link_to 'Back to meals', meals_path %></p>
 </div>
