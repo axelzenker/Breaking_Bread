@@ -1,4 +1,4 @@
-.container {
+.container3 {
   font-family: raleway;
   font-size: 25px;
   font-style: bold;
@@ -9,39 +9,19 @@
   background-color: white;
 }
 
-.row1 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  // left: 50%;
-  // right: 50%;
-  // margin-left: -50vw;
-  // margin-right: -50vw;
-  background-color: #DED2F9;
-}
-
 .row2 {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
   display: flex;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #C9EAFD;
 }
 
 .row3 {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
   display: flex;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #F5D4C1;
 }
 
@@ -68,17 +48,22 @@ p {
 }
 .banner-left {
   background-image: url('fladenbrot_1.png');
+  background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
   flex-grow: 1;
+  height: 100vh;
+  margin-right: 2px;
 }
 
 .banner-right {
   background-image: url('fladenbrot_2.png');
+  background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
   flex-grow: 1;
-
+  height: 100vh;
+  margin-left: 2px;
 }
 
 .btn-homepage {
