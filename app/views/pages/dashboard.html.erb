@@ -1,8 +1,9 @@
 
-<div class = container>
+<div class = dash-container>
   <div class = userinfo>
     <div class = details>
       <h1>Hello <%= current_user.nickname %></h1>
+      <h2><% current_user.description %></h2>
       <div class = dashboard-btn>
         <p><%= link_to "Break Bread", new_meal_path, class: "btn btn-success" %></p>
         <p><%= link_to "Discover meals", meals_path, class: "btn btn-success" %></p>
@@ -37,7 +38,7 @@
             <div>
               <p><%= order.meal.name %></p>
             </div>
-            <h2 class="pricing"><%= order.meal.price %></h2>
+            <h2 class="pricing"><%= link_to "Chat with #{order.meal.user.nickname}", chatroom_order_path(order) %></h2>
           </div>
         </div>
       <% end %>
