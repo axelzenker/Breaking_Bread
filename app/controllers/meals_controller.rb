@@ -30,6 +30,7 @@ class MealsController < ApplicationController
     @order = Order.new
     @order.user = current_user
     @order.meal = @meal
+    @available_portions = @meal.portions - @meal.orders.count
 
     @markers = [{
         lat: @meal.latitude,
@@ -76,6 +77,7 @@ class MealsController < ApplicationController
     params.require(:meal).permit(:name, :diet, :category, :cuisine, :details, :portions,
                                  :allergens, :price, :expiry, :reservation_min, photos: [])
   end
+
 
   # def order_params
   #   params.require(:order).permit()
