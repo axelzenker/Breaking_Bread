@@ -8,6 +8,7 @@
       </div>
 
       <div class="details">
+      <br>
         <h1><%= @meal.name %></h1>
         <div class="container container-background">
           <div class="row">
@@ -121,11 +122,11 @@
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
+        <br>
+      <div>
+        <%= link_to "🚀 Navigate me to this meal", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn btn-success" %>
+      </div>
       <div class="order">
-        <% if @meal.orders %>
-          <p><%="#{@meal.orders.count} #{@meal.name} portions have been ordered so far"  %></p>
-        <% end %>
         <% if policy(@order).create? %>
           <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
               data: {
@@ -136,14 +137,14 @@
               } %>
         <% end %>
       </div>
-
+    <br>
 
       <% if policy(@meal).edit? %>
         <%= link_to "Edit this meal", edit_meal_path(@meal), class: "btn btn-success"%>
       <% end %>
-
+    <br>
       <%= button_to "Delete this meal", @meal, class: "btn btn-success", method: :delete if policy(@meal).destroy? %>
-
+<br>
       <% besteller = [] %>
       <% @meal.orders.each do |order| %>
         <% besteller << order.user %>
@@ -153,6 +154,10 @@
           <%  order.user == current_user %>
             <%= link_to "message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn btn-success" %>
           <% end %>
+        <% end %>
+
+        <% if @meal.orders %>
+          <p><%="#{@meal.orders.count} #{@meal.name} portions have been ordered so far"  %></p>
         <% end %>
     </div>
   </div>
