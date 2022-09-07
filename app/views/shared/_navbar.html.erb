@@ -4,7 +4,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to meals_path, class: "navbar-brand" do %>
       <%= "Breaking Bread" %>
     <% end %>
 
@@ -26,11 +26,12 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", dashboard_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/77808978?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
               <%= link_to "All Meals", meals_path, class: "dropdown-item" %>
               <%= link_to "Add a Meal", new_meal_path, class: "dropdown-item" %>
               <%= link_to "Account", "#", class: "dropdown-item" %>

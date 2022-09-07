@@ -8,6 +8,5 @@ class PagesController < ApplicationController
     @user = current_user
     @meals_offered = @user.meals
     # @ordered_meals = @user.orders.map{|order| order.meal}
-    @orders = @user.orders
   end
 end

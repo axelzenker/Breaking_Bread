@@ -12,7 +12,7 @@
   </div>
   <div class = carousel>
     <p class= sticky>the meals you have offered:</p>
-    <% current_user.meals.each do |meal| %>
+    <% current_user.meals.reverse.each do |meal| %>
       <%= link_to meal_path(meal) do %>
         <div class="meal-card">
           <%= cl_image_tag meal.photos.first.key, class:'photo'%>
@@ -28,7 +28,8 @@
   </div>
   <div class = carousel>
     <p class= sticky>the meals you have ordered:</p>
-    <% current_user.orders.each do |order| %>
+
+    <% current_user.orders.reverse.each do |order| %>
       <%= link_to meal_path(order.meal) do %>
         <div class="meal-card">
           <%= cl_image_tag order.meal.photos.first.key, class:'photo'%>
@@ -42,6 +43,7 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
 
 </div>
