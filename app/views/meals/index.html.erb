@@ -32,7 +32,7 @@
     <% when 0 %>
       <div class = carousel>
         <p class= sticky>leafy meals</p>
-        <% @selection = Meal.where(diet: "Vegan" ) %>
+        <% @selection = Meal.where(diet: "Vegan").or(Meal.where(diet: 'Vegetarian')) %>
         <% @selection.each do |meal| %>
           <%= link_to meal_path(meal) do %>
             <div class="meal-card">
