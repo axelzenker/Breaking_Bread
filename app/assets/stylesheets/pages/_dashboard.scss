@@ -53,23 +53,36 @@
       max-width: 40rem;
       margin-left: 10px;
       width: 30%;
+      a{
+        padding:0;
+      }
       .photo {
         height: 200px;
         width: 100%;
         max-width: 400px;
         object-fit: cover;
       }
-      p {
-        font-size: 12px;
-        opacity: .7;
-        margin: 0;
-        padding: 5px;
-      }
-      h2{
-        padding: 5px;
-      }
-      .expiry{
-        font-size: large;
+      .meal-card-infos{
+
+        p {
+          font-size: 12px;
+          opacity: .7;
+          margin: 0;
+          padding: 5px;
+          font-size: large;
+        }
+        h2{
+          padding: 5px;
+          padding-left: auto;
+        }
+        .expiry{
+          font-size: large;
+        }
+        .links-dashboard{
+          display: flex;
+          justify-content: space-between;
+        }
+
       }
 
     }
