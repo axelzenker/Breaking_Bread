@@ -12,9 +12,9 @@ User.destroy_all
 
 puts 'Creating 14 admins...'
 
-afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi')
-hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai',   )
-axel = User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel')
+afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi', description: 'Absolute Foody. Living in Moers.')
+hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai', description: 'food is life! 🍜' )
+axel = User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel', description: 'eat, cycle, repeat 🚴‍♂️')
 ronna = User.create(email: 'ronna@gmail.com', password: '1234567', nickname: 'Ronna Farley')
 josephine = User.create(email: 'josephine@gmail.com', password: '1234567', nickname: 'Josephine Parton')
 ruby = User.create(email: 'ruby@gmail.com', password: '1234567', nickname: 'Ruby Williams')
@@ -239,7 +239,10 @@ frenchtoast = Meal.new(
   address: "Siebachstraße 105, 50733 Cologne"
 )
 file12 = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-220823-hong-kong-french-toast-388-horizontal-rv-web-1662038739.jpg?crop=0.895xw:0.855xh;0.0646xw,0.128xh&resize=980:*")
-frenchtoast.photos.attach(io: file12, filename: 'frenchtoast', content_type: 'image/jpg')
+file23 = URI.open("https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B711%2C451%5D&w=1582&h=791&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F03%2F08%2F7016-french-toast-mfs-010.jpg")
+file24 = URI.open("https://www.simplyrecipes.com/thmb/1r6e-oOPSGBkxbxY13tcRE1AvA8=/648x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-French-Toast-Lead-Shot-3b-c3a68a576a9548f5bd43cce3d2d7f4b7.jpg")
+
+frenchtoast.photos.attach([{io: file12, filename: 'frenchtoast', content_type: 'image/jpg'}, {io: file23, filename: 'frenchtoast2', content_type: 'image/jpg'}, {io: file24, filename: 'frenchtoast3', content_type: 'image/jpg'}])
 frenchtoast.user = johnson
 frenchtoast.save
 
