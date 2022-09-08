@@ -1,6 +1,6 @@
 <div class="container">
   <div class="meal-name">
-  <p><%= @meal.name %></p>
+    <h1><%= @meal.name %></h1>
   </div>
   <div class="flexbox">
   <div class="item1">
@@ -70,10 +70,10 @@
 
          <div class="row">
             <div class="col-4">
-              <p> 🍱 portions: </p>
+              <p> 🍱 portions available: </p>
             </div>
             <div class="col-8">
-              <p><%= @meal.portions %></p>
+              <p><%= @available_portions %>/<%= @meal.portions %></p>
             </div>
           </div>
 
@@ -147,17 +147,21 @@
       <div>
         <%= link_to "🚀 Navigate me to this meal", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn btn-success" %>
       </div>
-      <div class="order">
-        <% if policy(@order).create? %>
-          <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
-              data: {
-                'turbo-method' => :post,
-                controller: "modals",
-                modals_dashboard_url_value: dashboard_path,
-                action: "click->modals#fireSweetAlert"
-              } %>
-        <% end %>
-    </div>
+      <br>
+      <% if @available_portions > 0 %>
+        <div class="order">
+          <% if policy(@order).create? %>
+            <%= button_to "order", meal_orders_path(@meal), class: "btn btn-success",
+                data: {
+                  'turbo-method' => :post,
+                  controller: "modals",
+                  modals_dashboard_url_value: dashboard_path,
+                  action: "click->modals#fireSweetAlert"
+                } %>
+          <% end %>
+        </div>
+      <% end %>
+
     <br>
 
       <% if policy(@meal).edit? %>
