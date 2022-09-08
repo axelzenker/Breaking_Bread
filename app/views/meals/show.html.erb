@@ -4,137 +4,96 @@
   </div>
   <div class="flexbox">
   <div class="item1">
-  
+
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <% @meal.photos.each do |photo| %>
-            <div class="carousel-item active">
-            <%= cl_image_tag photo.key, class:"photo d-block" %>
-            </div>
-          <% end %>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-        </div>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <% @meal.photos.each do |photo| %>
+          <div class="carousel-item active">
+          <%= cl_image_tag photo.key, class:"photo d-block" %>
+          </div>
+        <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      </div>
     </div>
 
-      <div class="details">
-
-
-        <div class="container container-background">
-          <div class="row">
-            <div class="col-4">
-              <p> 🧑‍🤝‍🧑 made by:</p>
-            </div>
-            <div class="col-8">
-              <p><%=@meal.user.nickname %></p>
-            </div>
+    <div class="details">
+      <div class="container container-background">
+        <div class="row">
+          <div class="col-3">
+            <p> 🧑‍🤝‍🧑 made by:</p>
           </div>
+          <div class="col-9">
+            <p><%=@meal.user.nickname.capitalize %></p>
+          </div>
+        </div>
+
+      <div class="row">
+          <div class="col-3">
+            <p> 📇 category: </p>
+          </div>
+          <div class="col-9">
+            <p><%= @meal.category %></p>
+          </div>
+        </div>
 
         <div class="row">
-            <div class="col-4">
-              <p> 📇category: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.category %></p>
-            </div>
+          <div class="col-3">
+            <p> 🌍 cuisine: </p>
           </div>
-
-         <div class="row">
-            <div class="col-4">
-              <p> 🌍 cuisine: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.cuisine %></p>
-            </div>
+          <div class="col-9">
+            <p><%= @meal.cuisine %></p>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-4">
-              <p> 📜ℹ️  details: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.details %></p>
-            </div>
+        <div class="row">
+          <div class="col-3">
+            <p> 📜ℹ️  details: </p>
           </div>
-
-         <div class="row">
-            <div class="col-4">
-              <p> 🍱 portions: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.portions %></p>
-            </div>
+          <div class="col-9">
+            <p><%= @meal.details %></p>
           </div>
-
-           <div class="row">
-            <div class="col-4">
-              <p> 🥬 dietary restrictions: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.diet %></p>
-            </div>
-          </div>
-
-         <div class="row">
-            <div class="col-4">
-              <p> 💀 allergens: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.allergens %></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-4">
-              <p> 💶 price: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.price %></p>
-            </div>
-          </div>
-
-           <div class="row align-items-center">
-            <div class="col-4">
-              <p> #️⃣ minimum reservations: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.reservation_min %></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-4">
-              <p> 🍄 expiry: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.expiry %></p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-4">
-              <p> 🗺️ address: </p>
-            </div>
-            <div class="col-8">
-              <p><%= @meal.address %></p>
-            </div>
-          </div>
-
         </div>
 
 
+
+          <div class="row">
+          <div class="col-3">
+            <p> 🥬 dietary restrictions: </p>
+          </div>
+          <div class="col-9">
+            <p><%= @meal.diet %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <p> 💀 allergens: </p>
+          </div>
+          <div class="col-9">
+            <p><%= @meal.allergens %></p>
+          </div>
+        </div>
+          <div class="row align-items-center">
+          <%# <div class="col-3">
+            <p> #️⃣ minimum reservations: </p>
+          </div>
+          <div class="col-8"9
+            <p><%= @meal.reservation_min %></p>
+          <%# </div> %>
+        </div>
       </div>
+    </div>
   </div>
 
     <div class="item2">
@@ -144,41 +103,76 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
         <br>
-      <div>
-        <%= link_to "🚀 Navigate me to this meal", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn btn-success" %>
+      <div class="row">
+        <div class="col-3 pe-0" style="font-size: 14px";>
+          <p> 🗺️ address: </p>
+        </div>
+        <div class="col-9 ps-0" style="font-size: 14px";>
+          <p><%= @meal.address %></p>
+        </div>
+        <div class="row">
+          <div class="col-3" style="font-size: 14px";>
+            <p> 🍄 expiry: </p>
+          </div>
+          <div class="col-9 ps-0" style="font-size: 14px";>
+            <p><%= @meal.expiry %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3" style="font-size: 14px";>
+            <p> 🍱 portions: </p>
+          </div>
+          <div class="col-9 ps-0" style="font-size: 14px";>
+            <p><%= @meal.portions %></p>
+          </div>
+        </div>
+        <%# <div class="row align-items-center">
+          <div class="col-3">
+            <p> #️⃣ minimum reservations: </p>
+          </div>
+          <div class="col-9">
+            <p><%= @meal.reservation_min %></p>
+          <%# </div> %>
+        <%# </div> %>
+        <%# <div class="row">
+          <div class="col-3" style="font-size: 14px";>
+            <p> 💶 price: </p>
+          </div>
+          <div class="col-9" style="font-size: 14px";>
+            <p><%= @meal.price %>
+          <%# </div> %>
+        <%# </div> %>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <% if policy(@order).create? %>
+              <%= button_to "order this meal", meal_orders_path(@meal), class: "btn button-edit-order",
+                  data: {
+                    'turbo-method' => :post,
+                    controller: "modals",
+                    modals_dashboard_url_value: dashboard_path,
+                    action: "click->modals#fireSweetAlert"
+                  } %>
+            <% end %>
+            <% if policy(@meal).edit? %>
+              <%= button_to "Edit this meal", edit_meal_path(@meal), class: "btn button-edit-order"%>
+            <% end %>
+            <%= button_to "Delete this meal", @meal, class: "btn button-edit-order", method: :delete if policy(@meal).destroy? %>
+              <% besteller = [] %>
+              <% @meal.orders.each do |order| %>
+              <% besteller << order.user %>
+            <% end %>
+            <% if besteller.include? current_user %>
+              <% @meal.orders.find do |order| %>
+                <%  order.user == current_user %>
+                <%= button_to "Message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn button-edit-order" %>
+              <% end %>
+            <% end %>
+            <%= button_to "Bring me there 🚀 ", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn button-edit-order"%>
+        </div>
       </div>
-      <div class="order">
-        <% if policy(@order).create? %>
-          <%= button_to  "order this meal", meal_orders_path(@meal), class: "btn btn-success",
-              data: {
-                'turbo-method' => :post,
-                controller: "modals",
-                modals_dashboard_url_value: dashboard_path,
-                action: "click->modals#fireSweetAlert"
-              } %>
-        <% end %>
-    </div>
-    <br>
 
-      <% if policy(@meal).edit? %>
-        <%= link_to "Edit this meal", edit_meal_path(@meal), class: "btn btn-success"%>
-      <% end %>
-    <br>
-      <%= button_to "Delete this meal", @meal, class: "btn btn-success", method: :delete if policy(@meal).destroy? %>
-<br>
-      <% besteller = [] %>
-      <% @meal.orders.each do |order| %>
-        <% besteller << order.user %>
-      <% end %>
-        <% if besteller.include? current_user %>
-          <% @meal.orders.find do |order| %>
-          <%  order.user == current_user %>
-            <%= link_to "message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn btn-success" %>
-          <% end %>
-        <% end %>
-
+    <div class="note-showpage">
         <% if @meal.orders %>
-          <p><%="#{@meal.orders.count} #{@meal.name} portions have been ordered so far"  %></p>
+          <p><%="#{@meal.orders.count} people ordered this already!"  %></p>
         <% end %>
     </div>
   </div>
