@@ -11,7 +11,7 @@
     </div>
       <figure class= img>
         <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
-      <figcaption>Absolute Foody. Living in Moers.</figcaption>
+      <figcaption>current_user.description</figcaption>
       </figure>
   </div>
   <div class = carousel>
@@ -34,21 +34,37 @@
     <p class= sticky>the meals you have ordered:</p>
 
     <% @unique_meals.reverse.each do |meal| %>
-      <%= link_to meal_path(meal) do %>
-        <div class="meal-card">
-          <%= cl_image_tag meal.photos.first.key, class:'photo'%>
 
+        <div class="meal-card">
+          <%= link_to meal_path(meal) do %>
+            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+          <%end %>
           <div class="meal-card-infos">
-            <div>
-              <p><%= meal.name %></p>
+            <%= link_to meal_path(meal) do %>
+              <div>
+                <p><%= meal.name %>made by <%= meal.user.nickname %></p>
+                <p class = expiry>You,ve ordered this meal
+                  <%= " #{pluralize( @user.orders.count{|order| order.meal == meal }, 'time' )}" %>
+                </p>
+              </div>
+            <%end %>
+            <div class = links-dashboard>
+              <%= link_to  chatroom_order_path(Order.find_by(meal_id: meal.id)) do %>
+                <div class = "d-flex align-items-center">
+                  <p class ="m-0">Chat </p>
+                  <h2 class ="m-0"> ✉️</h2>
+                </div>
+              <% end %>
+              <%= link_to  "https://www.google.com/maps/dir/?api=1&destination=#{meal.latitude}%2C#{meal.longitude}&dir_action=navigate" do %>
+                <div class = "d-flex align-items-center">
+                  <p class ="m-0">Bring me there</p>
+                  <h2 class ="m-0"> 🚀</h2>
+                </div>
+              <% end %>
             </div>
-            <p class = expiry>You,ve ordered this meal
-            <%= " #{pluralize( @user.orders.count{|order| order.meal == meal }, 'time' )}" %>
-            </p>
-            <h2 class="pricing"><%= link_to "Chat with #{order.meal.user.nickname}", chatroom_order_path(order) %></h2>
           </div>
         </div>
-      <% end %>
+
     <% end %>
 
   </div>

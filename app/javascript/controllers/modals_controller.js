@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 export default class extends Controller {
   connect() {
     console.log(this.dashboardUrlValue);
+    console.log("Test");
 
   }
   static values = {
@@ -12,9 +13,10 @@ export default class extends Controller {
   }
 
   fireSweetAlert() {
+    console.log("Test")
     const meal = document.querySelector('h1').innerText;
-    swal(`You just ordered 1x ${meal}`, {
-      buttons: "go to dashboard",
+    swal(`You just ordered 1x ${meal}! ✅`, {
+      buttons: "bring me to the dashboard",
     }).then((value) => {
       if (value) {
         window.location.replace(this.dashboardUrlValue)

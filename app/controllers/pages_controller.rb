@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @meals_offered = @user.meals
     @unique_meals = current_user.orders.map{|order| order.meal }.uniq
     @reversed_user_orders = current_user.orders.reverse
-  
+
   end
 
 end

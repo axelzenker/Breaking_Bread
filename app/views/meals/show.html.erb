@@ -1,6 +1,6 @@
 <div class="container">
   <div class="meal-name">
-  <p><%= @meal.name %></p>
+    <h1><%= @meal.name %></h1>
   </div>
   <div class="flexbox">
   <div class="item1">
@@ -61,11 +61,11 @@
           <div class="col-3">
             <p> 📜ℹ️  details: </p>
           </div>
+
           <div class="col-9">
             <p><%= @meal.details %></p>
           </div>
         </div>
-
 
 
           <div class="row">
@@ -119,13 +119,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-3" style="font-size: 14px";>
-            <p> 🍱 portions: </p>
-          </div>
-          <div class="col-9 ps-0" style="font-size: 14px";>
-            <p><%= @meal.portions %></p>
-          </div>
-        </div>
+            <div class="col-4">
+              <p> 🍱 portions available: </p>
+            </div>
+            <div class="col-8">
+              <p><%= @available_portions %>/<%= @meal.portions %></p>
+            </div>
+         </div>
         <%# <div class="row align-items-center">
           <div class="col-3">
             <p> #️⃣ minimum reservations: </p>
@@ -142,30 +142,41 @@
             <p><%= @meal.price %>
           <%# </div> %>
         <%# </div> %>
+        
+        
         <div class="btn-group" role="group" aria-label="Basic example">
-            <% if policy(@order).create? %>
-              <%= button_to "order this meal", meal_orders_path(@meal), class: "btn button-edit-order",
-                  data: {
-                    'turbo-method' => :post,
-                    controller: "modals",
-                    modals_dashboard_url_value: dashboard_path,
-                    action: "click->modals#fireSweetAlert"
-                  } %>
+            
+            <% if @available_portions > 0 %>
+              <div class="order">
+              <% if policy(@order).create? %>
+                <%= button_to "order", meal_orders_path(@meal), class: "btn btn-success",
+                    data: {
+                      'turbo-method' => :post,
+                      controller: "modals",
+                      modals_dashboard_url_value: dashboard_path,
+                      action: "click->modals#fireSweetAlert"
+                    } %>
+              <% end %>
+              </div>
             <% end %>
+            
             <% if policy(@meal).edit? %>
               <%= button_to "Edit this meal", edit_meal_path(@meal), class: "btn button-edit-order"%>
             <% end %>
+            
             <%= button_to "Delete this meal", @meal, class: "btn button-edit-order", method: :delete if policy(@meal).destroy? %>
               <% besteller = [] %>
               <% @meal.orders.each do |order| %>
               <% besteller << order.user %>
             <% end %>
+            
             <% if besteller.include? current_user %>
               <% @meal.orders.find do |order| %>
                 <%  order.user == current_user %>
                 <%= button_to "Message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn button-edit-order" %>
               <% end %>
             <% end %>
+            
             <%= button_to "Bring me there 🚀 ", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn button-edit-order"%>
         </div>
       </div>
