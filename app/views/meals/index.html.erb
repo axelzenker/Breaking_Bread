@@ -17,9 +17,9 @@
 
             <div class="meal-card-infos">
               <div>
-                  <p><%= meal.user.nickname.capitalize %></p>
+                <h6><%= meal.user.nickname.capitalize %></h6>
               </div>
-              <h2 class="expiry"><%= meal.name %></h2>
+                <h4><%= meal.name %></h4>
             </div>
           </div>
         <% end %>
@@ -31,7 +31,7 @@
   <% case randfactor %>
     <% when 0 %>
       <div class = carousel>
-        <p class= sticky>leafy meals</p>
+        <p class= sticky>Leafy meals</p>
         <% @selection = Meal.where(diet: "Vegan").or(Meal.where(diet: 'Vegetarian')) %>
         <% @selection.each do |meal| %>
           <%= link_to meal_path(meal) do %>
@@ -40,9 +40,9 @@
 
               <div class="meal-card-infos">
                 <div>
-                  <p><%= meal.user.nickname.capitalize %></p>
+                  <h6><%= meal.user.nickname.capitalize %></h6>
                 </div>
-                <h2 class="expiry"><%= meal.name %></h2>
+                <h4><%= meal.name %></h4>
               </div>
             </div>
           <% end  %>
@@ -52,7 +52,7 @@
 
     <% when 1 %>
       <div class = carousel>
-        <p class= sticky>meaty meals</p>
+        <p class= sticky>Meaty meals</p>
         <% @selection = Meal.where(diet: "Carnivore" ) %>
         <% @selection.each do |meal| %>
           <%= link_to meal_path(meal) do %>
@@ -61,9 +61,9 @@
 
               <div class="meal-card-infos">
                 <div>
-                  <p><%= meal.user.nickname.capitalize %></p>
+                  <h6><%= meal.user.nickname.capitalize %></h6>
                 </div>
-                <h2 class="pricing"><%= meal.name %></h2>
+                <h4><%= meal.name %></h4>
               </div>
             </div>
           <% end  %>

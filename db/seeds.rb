@@ -52,7 +52,7 @@ tonkotsuramen.save
 
 puts 'creating beefshrooms...'
 beefshrooms = Meal.new(
-  name: "Beef and Mushrooms with Smashed Potatoes",
+  name: "Beef and Mushrooms",
   category: "Meat & Poultry",
   cuisine: "American",
   details: "A lovely meal which I cooked to last night. I would be happy to share with somebody!",
@@ -140,7 +140,7 @@ jollof.save
 
 puts 'creating beef-paprikash...'
 beefpaprikash = Meal.new(
-  name: "Beef Paprikash with Fire-Roasted Tomatoes",
+  name: "Beef Paprikash",
   category: "Stew",
   cuisine: "Hungarian",
   details: "Beef paprikash, a Hungarian dish, makes a marvelous dinner. I have plenty of portions for pick-up ready.",
@@ -175,7 +175,7 @@ chickenriceskillet.save
 
 puts 'creating bean&beef chili...'
 beanbeefchili = Meal.new(
-  name: "Bean & Beef Slow-Cooked Chili",
+  name: "Slow-Cooked Chili",
   category: "One Pot Dish",
   cuisine: "American",
   details: "This chili may be already chock-full, but we have it up even more topped up with toppings like pico de
@@ -338,7 +338,7 @@ zucchinifritters.save
 
 puts 'creating caribbean tofu...'
 caribbeantofu = Meal.new(
-  name: "Caribbean Tofu with Coconut Quinoa",
+  name: "Caribbean Tofu with Coconut",
   category: "Fried",
   cuisine: "Caribbean",
   details: "This Caribbean Tofu with Coconut Quinoa is a great summery treat. Mixing lime and coconut with earthy spices
@@ -356,7 +356,7 @@ caribbeantofu.save
 
 puts 'creating vegan cobbler...'
 vegancobbler = Meal.new(
-  name: "Vegan Brown Butter Peach Cobbler",
+  name: "Brown Butter Peach Cobbler",
   category: "Dessert",
   cuisine: "French",
   details: "Peaches and blueberries get swirled with vegan brown butter and cobbler, making for a cake that’s sticky
