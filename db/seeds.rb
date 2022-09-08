@@ -44,7 +44,9 @@ tonkotsuramen = Meal.new(
   address: "Spichernstraße 8, 50672 Cologne"
 )
 file1 = URI.open("https://takumi.koeln/wp-content/uploads/2021/10/ramen-koeln-2-shio.jpg")
-tonkotsuramen.photos.attach(io: file1, filename: 'ramen', content_type: 'image/jpg')
+file22 = URI.open("https://res.cloudinary.com/qhai/image/upload/v1662630383/production/87bc54_710f936f47774a0589e6a7ff481a9c2d_mv2_aprpvk.webp")
+file23 = URI.open("https://res.cloudinary.com/qhai/image/upload/v1662630383/production/ramen-takumi-koeln-4_efgody.jpg")
+tonkotsuramen.photos.attach([{io: file1, filename: 'ramen1', content_type: 'image/jpg'}, {io: file22, filename: 'ramen22', content_type: 'image/jpg'}, {io: file23, filename: 'ramen23', content_type: 'image/jpg'}])
 tonkotsuramen.user = hai
 tonkotsuramen.save
 
