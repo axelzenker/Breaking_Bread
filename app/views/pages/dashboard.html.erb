@@ -10,7 +10,8 @@
       </div>
     </div>
       <figure class= img>
-        <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt="">
+        <%# <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt=""> %>
+        <%= cl_image_tag current_user.photos.first.key %>
       <figcaption><%= current_user.description %></figcaption>
 
       </figure>
@@ -32,6 +33,16 @@
       <% end %>
     <% end %>
   </div>
+
+
+<div>
+  <% current_user.meals.reverse.each do |meal| %>
+    <% meal.orders.each do |order| %>
+        <li><%= order.user.nickname.capitalize %> placed an order for your <%= order.meal.name %> <%= link_to '>> Click here to Chat with them <<', chatroom_order_path(order) %></li>
+        <% end %>
+  <% end %>
+</div>
+
   <div class = carousel>
     <p class= sticky>The meals you have ordered:</p>
 
