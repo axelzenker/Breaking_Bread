@@ -7,7 +7,9 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @meals_offered = @user.meals
-    # @ordered_meals = @user.orders.map{|order| order.meal}
-    @orders = @user.orders
+    @unique_meals = current_user.orders.map{|order| order.meal }.uniq
+    @reversed_user_orders = current_user.orders.reverse
+  
   end
+
 end
