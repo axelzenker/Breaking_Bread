@@ -12,7 +12,12 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <% @meal.photos.each do |photo| %>
+        <% @meal.photos.first do |photo| %>
+          <div class="carousel-item active">
+          <%= cl_image_tag photo.key, class:"photo d-block" %>
+          </div>
+        <% end %>
+        <% @meal.photos[1..-1].each do |photo| %>
           <div class="carousel-item active">
           <%= cl_image_tag photo.key, class:"photo d-block" %>
           </div>
@@ -142,10 +147,10 @@
             <p><%= @meal.price %>
           <%# </div> %>
         <%# </div> %>
-        
-        
+
+
         <div class="btn-group" role="group" aria-label="Basic example">
-            
+
             <% if @available_portions > 0 %>
               <div class="order">
               <% if policy(@order).create? %>
@@ -159,25 +164,27 @@
               <% end %>
               </div>
             <% end %>
-            
+
             <% if policy(@meal).edit? %>
-              <%= button_to "Edit this meal", edit_meal_path(@meal), class: "btn button-edit-order"%>
+              <%= link_to edit_meal_path(@meal) do%>
+                <button class= "btn button-edit-order">Edit this meal</button>
+              <% end %>
             <% end %>
-            
+
             <%= button_to "Delete this meal", @meal, class: "btn button-edit-order", method: :delete if policy(@meal).destroy? %>
               <% besteller = [] %>
               <% @meal.orders.each do |order| %>
               <% besteller << order.user %>
             <% end %>
-            
+
             <% if besteller.include? current_user %>
               <% @meal.orders.find do |order| %>
                 <%  order.user == current_user %>
-                <%= button_to "Message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn button-edit-order" %>
+                <%= link_to "Message #{@meal.user.nickname.capitalize}", chatroom_order_path(order), class: "btn button-edit-order" %>
               <% end %>
             <% end %>
-            
-            <%= button_to "Bring me there 🚀 ", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn button-edit-order"%>
+
+            <%= link_to "Bring me there 🚀 ", "https://www.google.com/maps/dir/?api=1&destination=#{@meal.latitude}%2C#{@meal.longitude}&dir_action=navigate", class: "btn button-edit-order"%>
         </div>
       </div>
 
