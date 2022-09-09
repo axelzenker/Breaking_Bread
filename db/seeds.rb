@@ -12,9 +12,9 @@ User.destroy_all
 
 puts 'Creating 14 admins...'
 
-afolabi = User.create(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi', description: 'Absolute Foody. Living in Moers.')
-hai = User.create(email: 'hai@gmail.com', password: '1234567', nickname: 'hai', description: 'food is life! 🍜' )
-axel = User.create(email: 'axel@axel.com', password: '1234567', nickname: 'axel', description: 'eat, cycle, repeat 🚴‍♂️')
+afolabi = User.new(email: 'aaafolayan@gmail.com', password: '1234567', nickname: 'afolabi', description: 'Absolute Foody. Living in Moers.')
+hai = User.new(email: 'hai@gmail.com', password: '1234567', nickname: 'hai', description: 'food is life! 🍜' )
+axel = User.new(email: 'axel@axel.com', password: '1234567', nickname: 'axel', description: 'eat, cycle, repeat 🚴‍♂️')
 ronna = User.create(email: 'ronna@gmail.com', password: '1234567', nickname: 'Ronna Farley')
 josephine = User.create(email: 'josephine@gmail.com', password: '1234567', nickname: 'Josephine Parton')
 ruby = User.create(email: 'ruby@gmail.com', password: '1234567', nickname: 'Ruby Williams')
@@ -27,6 +27,18 @@ william = User.create(email: 'william@gmail.com', password: '1234567', nickname:
 eri = User.create(email: 'eri@gmail.com', password: '1234567', nickname: 'Eri')
 natalia = User.create(email: 'natalia@gmail.com', password: '1234567', nickname: 'Natalia')
 diego = User.create(email: 'diego@gmail.com', password: '1234567', nickname: 'Diego')
+
+file30 = URI.open("https://avatars.githubusercontent.com/u/77808978?v=4")
+file31 = URI.open("https://avatars.githubusercontent.com/u/108654212?v=4")
+file32 = URI.open("https://avatars.githubusercontent.com/u/108351320?v=4")
+
+afolabi.photos.attach(io: file30, filename: 'afo', content_type: 'image/jpg')
+hai.photos.attach(io: file31, filename: 'hai', content_type: 'image/jpg')
+axel.photos.attach(io: file32, filename: 'axel', content_type: 'image/jpg')
+
+afolabi.save
+hai.save
+axel.save
 
 puts 'Creating 19 delicious real meals...'
 
@@ -117,7 +129,9 @@ sumrolls = Meal.new(
   address: "Maternusstraße 15, 50678 Cologne"
 )
 file5 = URI.open("https://cdn.statically.io/img/www.aheadofthyme.com/f=auto//wp-content/uploads/2021/07/vietnamese-summer-rolls-with-chicken-2.jpg")
-sumrolls.photos.attach(io: file5, filename: 'sumrolls', content_type: 'image/jpg')
+file40 = URI.open("https://cdn.tgdd.vn/Files/2021/08/28/1378488/cach-lam-goi-cuon-bo-xao-sa-thom-lung-ngon-mieng-dai-ca-nha-202201051121002357.jpg")
+file41 = URI.open("https://www.resipis.de/wp-content/uploads/2016/07/vietnamesische-sommerrollen-mit-garnelen-und-nuoc-cham-1.jpg")
+sumrolls.photos.attach([{io: file5, filename: 'sumrolls', content_type: 'image/jpg'}, {io: file40, filename: 'sumrolls2', content_type: 'image/jpg'}, {io: file41, filename: 'sumrolls3', content_type: 'image/jpg'}])
 sumrolls.user = hai
 sumrolls.save
 
@@ -128,7 +142,7 @@ jollof = Meal.new(
   cuisine: "Nigerian",
   details: "Best Jollof rice in the world, far superior to Ghanaian 'version'. Happy to share :)",
   portions: 3,
-  diet: "Vegetarian",
+  diet: "carnivore",
   allergens: 'includes Meat broth',
   expiry: "12.09.2022",
   address: "Karl-Korn-Straße 10, 50678 Cologne"
@@ -220,7 +234,7 @@ beansoup = Meal.new(
   expiry: "10.09.2022",
   address: "Wöhlerstraße 35, 50823 Cologne"
 )
-file11 = URI.open("https://img.chefkoch-cdn.de/rezepte/999441205246890/bilder/1351902/crop-960x640/leckere-gruene-bohnensuppe.jpg")
+file11 = URI.open("https://www.kuechengoetter.de/uploads/media/630x630/00/5760-gruener-bohneneintopf.jpg?v=1-0")
 beansoup.photos.attach(io: file11, filename: 'beansoup', content_type: 'image/jpg')
 beansoup.user = justus
 beansoup.save
