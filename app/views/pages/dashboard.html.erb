@@ -35,14 +35,6 @@
   </div>
 
 
-<div>
-  <% current_user.meals.reverse.each do |meal| %>
-    <% meal.orders.each do |order| %>
-        <li><%= order.user.nickname.capitalize %> placed an order for your <%= order.meal.name %> <%= link_to '>> Click here to Chat with them <<', chatroom_order_path(order) %></li>
-        <% end %>
-  <% end %>
-</div>
-
   <div class = carousel>
     <p class= sticky>The meals you have ordered:</p>
 
@@ -80,6 +72,14 @@
 
     <% end %>
 
+  </div>
+
+  <div>
+    <% current_user.meals.reverse.each do |meal| %>
+      <% meal.orders.each do |order| %>
+          <li><%= order.user.nickname.capitalize %> placed an order for your <%= order.meal.name %> <%= link_to '>> Click here to Chat with them <<', chatroom_order_path(order) %></li>
+          <% end %>
+    <% end %>
   </div>
 
 </div>
