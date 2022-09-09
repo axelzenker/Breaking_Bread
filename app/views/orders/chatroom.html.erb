@@ -1,28 +1,30 @@
 <div class="container chatroom", style= "height: 100%">
   <div class="container chatroom container-background-chat"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-order-id-value="<%= @order.id %>"
-  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-order-id-value="<%= @order.id %>"
+    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @order.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-          <%= render "messages/message", message: message %>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @order.messages.each do |message| %>
+        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+            <%= render "messages/message", message: message %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-<div class="fixed-bottom">
-  <%= simple_form_for [@order, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Send a message",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
+    <div class="container fixed-bottom" style="bottom: 60px;">
+      <%= simple_form_for [@order, @message],
+        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+      %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Send a message",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <% end %>
+    </div>
+  </div>
 </div>
